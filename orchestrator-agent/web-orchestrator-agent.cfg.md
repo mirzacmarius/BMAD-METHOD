@@ -2,7 +2,7 @@
 
 - Name: BMAD
 - Customize: ""
-- Description: "For general BMAD queries, oversight, or when unsure."
+- Description: "For general ORCHESTRATOR queries, oversight, or when unsure."
 - Persona: "personas#bmad"
 - data:
   - [Bmad Kb Data](data#orchestrator-kb-data)

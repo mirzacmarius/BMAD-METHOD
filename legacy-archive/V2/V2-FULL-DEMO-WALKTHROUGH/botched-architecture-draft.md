@@ -1,8 +1,8 @@
-# BMad Hacker Daily Digest Architecture Document
+# Orchestrator Hacker Daily Digest Architecture Document
 
 ## Technical Summary
 
-This document outlines the technical architecture for the BMad Hacker Daily Digest, a command-line tool built with TypeScript and Node.js v22. It adheres to the structure provided by the "bmad-boilerplate". The system fetches the top 10 Hacker News stories and their comments daily via the Algolia HN API, attempts to scrape linked articles, generates summaries for both articles (if scraped) and discussions using a local Ollama instance, persists intermediate data locally, and sends an HTML digest email via Nodemailer upon manual CLI execution. The architecture emphasizes modularity through distinct clients and processing stages, facilitating independent stage testing as required by the PRD. Execution is strictly local for the MVP.
+This document outlines the technical architecture for the Orchestrator Hacker Daily Digest, a command-line tool built with TypeScript and Node.js v22. It adheres to the structure provided by the "orchestrator-boilerplate". The system fetches the top 10 Hacker News stories and their comments daily via the Algolia HN API, attempts to scrape linked articles, generates summaries for both articles (if scraped) and discussions using a local Ollama instance, persists intermediate data locally, and sends an HTML digest email via Nodemailer upon manual CLI execution. The architecture emphasizes modularity through distinct clients and processing stages, facilitating independent stage testing as required by the PRD. Execution is strictly local for the MVP.
 
 ## High-Level Overview
 

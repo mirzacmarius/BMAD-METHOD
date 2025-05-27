@@ -12,7 +12,7 @@ As cursor currently limits the total number of allowed custom modes - you can ut
 
 ## Orchestrator Agent
 
-The Orchestrator Agent requires the full bmad agent folder to be at the root of your project. Set up of the orchestrator simply requires copy of the markdown content of ide-orchestrator.md the same way you would do the Single Agent.
+The Orchestrator Agent requires the full orchestrator agent folder to be at the root of your project. Set up of the orchestrator simply requires copy of the markdown content of ide-orchestrator.md the same way you would do the Single Agent.
 
 ## Setting Up Custom Modes in Cursor
 
@@ -60,7 +60,7 @@ NOTE from Cursor: "We’re considering adding a .cursor/modes.json file to your 
 
 2. **Creating Orchestrator Method Agents**:
 
-   - Create distinct modes for each BMAD role (Analyst, PM, Architect, PO/SM, Dev, Documentation, etc...)
+   - Create distinct modes for each ORCHESTRATOR role (Analyst, PM, Architect, PO/SM, Dev, Documentation, etc...)
    - Customize each mode with tailored prompts specific to their role
    - Configure file restrictions appropriate to each role (e.g., Architect and PM modes may edit markdown files)
    - Set up direct mode switching so agents can request to switch to other modes when needed

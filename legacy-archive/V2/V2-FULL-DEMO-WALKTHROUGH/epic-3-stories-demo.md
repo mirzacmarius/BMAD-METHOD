@@ -25,7 +25,7 @@ Generating the stories for **Epic 3: Article Scraping & Persistence**. This assu
 - Add `@extractus/article-extractor` dependency: `npm install @extractus/article-extractor --save-prod`. [222, 223, 873]
 - Implement an async function `scrapeArticle(url: string): Promise<string | null>` within the module. [223, 224]
 - Inside the function:
-  - Use native `Workspace` [749] to retrieve content from the `url`. [224] Set a reasonable timeout (e.g., 15 seconds via `AbortSignal.timeout()`, configure via `SCRAPE_TIMEOUT_MS` [615] if needed). Include a `User-Agent` header (e.g., `"BMadHackerDigest/0.1"` or configurable via `SCRAPER_USER_AGENT` [629]). [225]
+  - Use native `Workspace` [749] to retrieve content from the `url`. [224] Set a reasonable timeout (e.g., 15 seconds via `AbortSignal.timeout()`, configure via `SCRAPE_TIMEOUT_MS` [615] if needed). Include a `User-Agent` header (e.g., `"OrchestratorHackerDigest/0.1"` or configurable via `SCRAPER_USER_AGENT` [629]). [225]
   - Handle potential `Workspace` errors (network errors, timeouts) using `try...catch`. Log error using logger (from Story 1.4) and return `null`. [226]
   - Check the `response.ok` status. If not okay, log error (including status code) and return `null`. [226, 227]
   - Check the `Content-Type` header of the response. If it doesn't indicate HTML (e.g., does not include `text/html`), log warning and return `null`. [227, 228]
@@ -71,7 +71,7 @@ Generating the stories for **Epic 3: Article Scraping & Persistence**. This assu
   - _(Hint: See `docs/data-models.md` [498-547])._
 - **Environment Variables:**
   - Optional: `SCRAPE_TIMEOUT_MS` (default e.g., 15000). [615]
-  - Optional: `SCRAPER_USER_AGENT` (default e.g., "BMadHackerDigest/0.1"). [629]
+  - Optional: `SCRAPER_USER_AGENT` (default e.g., "OrchestratorHackerDigest/0.1"). [629]
   - Load via `config.ts` if used.
   - _(Hint: See `docs/environment-vars.md` [548-638])._
 - **Coding Standards Notes:**

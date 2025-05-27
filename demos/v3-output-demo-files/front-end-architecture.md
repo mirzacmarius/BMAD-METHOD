@@ -1,4 +1,4 @@
-# BMad Daily Digest Frontend Architecture Document
+# Orchestrator Daily Digest Frontend Architecture Document
 
 **Version:** 0.1
 **Date:** May 20, 2025
@@ -30,17 +30,17 @@
 
 ## 1\. Introduction
 
-This document details the technical architecture specifically for the frontend of "BMad Daily Digest." It complements the main "BMad Daily Digest" System Architecture Document (v0.1) and the UI/UX Specification (v0.1). This document builds upon the foundational decisions (e.g., overall tech stack, CI/CD, primary testing tools) defined in the System Architecture Document and the visual/UX direction from the UI/UX Specification. The initial frontend structure has been scaffolded using an AI UI generation tool (V0.dev), and this document outlines how that scaffold will be developed into the full MVP application.
+This document details the technical architecture specifically for the frontend of "Orchestrator Daily Digest." It complements the main "Orchestrator Daily Digest" System Architecture Document (v0.1) and the UI/UX Specification (v0.1). This document builds upon the foundational decisions (e.g., overall tech stack, CI/CD, primary testing tools) defined in the System Architecture Document and the visual/UX direction from the UI/UX Specification. The initial frontend structure has been scaffolded using an AI UI generation tool (V0.dev), and this document outlines how that scaffold will be developed into the full MVP application.
 
 - **Link to Main System Architecture Document (REQUIRED):** `docs/architecture.md` (Conceptual path, refers to the doc created by Fred).
 - **Link to UI/UX Specification (REQUIRED):** `docs/ui-ux-specification.md` (Conceptual path, refers to the doc we created).
 - **Link to Primary Design Files (Figma, Sketch, etc.):** As per UI/UX Spec, detailed visual mockups in separate design files are not planned for MVP. Design is derived from UI/UX Spec and this document.
 - **Link to Deployed Storybook / Component Showcase:** Not an initial deliverable for MVP. May evolve post-MVP.
-- **Link to Frontend Source Code Repository:** `bmad-daily-digest-frontend` (GitHub).
+- **Link to Frontend Source Code Repository:** `orchestrator-daily-digest-frontend` (GitHub).
 
 ## 2\. Overall Frontend Philosophy & Patterns
 
-The frontend for "BMad Daily Digest" aims for a unique user experience based on an "80s retro CRT terminal" aesthetic, while being efficient, responsive, and maintainable.
+The frontend for "Orchestrator Daily Digest" aims for a unique user experience based on an "80s retro CRT terminal" aesthetic, while being efficient, responsive, and maintainable.
 
 - **Framework & Core Libraries:** Next.js (vLatest stable, e.g., 14.x, using App Router) with React (vLatest stable, e.g., 18.x) and TypeScript. These are derived from the "Definitive Tech Stack Selections" in the System Architecture Document.
 - **Component Architecture:**
@@ -63,10 +63,10 @@ The frontend for "BMad Daily Digest" aims for a unique user experience based on 
 
 ## 3\. Detailed Frontend Directory Structure
 
-The project structure is based on the initial V0.dev scaffold for `bmad-daily-digest-frontend` and standard Next.js App Router conventions. The `cdk/` directory is added for managing frontend-specific AWS infrastructure.
+The project structure is based on the initial V0.dev scaffold for `orchestrator-daily-digest-frontend` and standard Next.js App Router conventions. The `cdk/` directory is added for managing frontend-specific AWS infrastructure.
 
 ```plaintext
-bmad-daily-digest-frontend/
+orchestrator-daily-digest-frontend/
 ├── .github/                    # GitHub Actions for CI/CD
 │   └── workflows/
 │       └── main.yml
@@ -192,7 +192,7 @@ For the MVP, the state management strategy will be kept simple and align with mo
 
 ## 6\. API Interaction Layer (`lib/api-client.ts`)
 
-This module will encapsulate all communication with the `bmad-daily-digest-backend` API.
+This module will encapsulate all communication with the `orchestrator-daily-digest-backend` API.
 
 - **HTTP Client Setup:**
   - Will use the browser's native **`Workspace` API**, wrapped in utility functions within `api-client.ts` for ease of use, error handling, and request/response processing.
@@ -241,7 +241,7 @@ This section aligns with the "Frontend Deployment to S3 & CloudFront via CDK" (S
 - **Deployment to S3/CloudFront (via Frontend CDK App):**
   - The `next build` (and potentially `next export` if using that pattern) output will be synced to an AWS S3 bucket configured for static website hosting.
   - An AWS CloudFront distribution will serve the content from S3, providing CDN caching, HTTPS, and custom domain support (post-MVP for custom domain).
-  - The CDK app in the `bmad-daily-digest-frontend` repository will manage this S3 bucket and CloudFront distribution.
+  - The CDK app in the `orchestrator-daily-digest-frontend` repository will manage this S3 bucket and CloudFront distribution.
 
 ## 9\. Frontend Testing Strategy
 

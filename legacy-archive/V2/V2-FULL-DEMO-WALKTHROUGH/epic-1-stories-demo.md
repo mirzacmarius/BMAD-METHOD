@@ -21,13 +21,13 @@ Here is the report containing the generated stories for Epic 1:
 
 ## Goal & Context
 
-**User Story:** As a developer, I want to set up the initial project structure using the `bmad-boilerplate`, so that I have the standard tooling (TS, Jest, ESLint, Prettier), configurations, and scripts in place. [96]
+**User Story:** As a developer, I want to set up the initial project structure using the `orchestrator-boilerplate`, so that I have the standard tooling (TS, Jest, ESLint, Prettier), configurations, and scripts in place. [96]
 
-**Context:** This is the foundational story for the entire project. It establishes the core development environment, tooling, and standard scripts based on the `bmad-boilerplate` template, as required by the PRD [706, 713, 784] and Architecture [43]. All subsequent development relies on the successful completion of this setup.
+**Context:** This is the foundational story for the entire project. It establishes the core development environment, tooling, and standard scripts based on the `orchestrator-boilerplate` template, as required by the PRD [706, 713, 784] and Architecture [43]. All subsequent development relies on the successful completion of this setup.
 
 ## Detailed Requirements
 
-- Copy or clone the contents of the `bmad-boilerplate` into the new project's root directory. [97]
+- Copy or clone the contents of the `orchestrator-boilerplate` into the new project's root directory. [97]
 - Initialize a git repository in the project root directory (if not already done by cloning). [98]
 - Ensure the `.gitignore` file from the boilerplate is present. [99]
 - Run `npm install` to download and install all `devDependencies` specified in the boilerplate's `package.json`. [100]
@@ -35,7 +35,7 @@ Here is the report containing the generated stories for Epic 1:
 
 ## Acceptance Criteria (ACs)
 
-- AC1: The project directory contains the files and structure from `bmad-boilerplate`. [102]
+- AC1: The project directory contains the files and structure from `orchestrator-boilerplate`. [102]
 - AC2: A `node_modules` directory exists and contains packages corresponding to `devDependencies`. [103]
 - AC3: `npm run lint` command completes successfully without reporting any linting errors. [104]
 - AC4: `npm run format` command completes successfully, potentially making formatting changes according to Prettier rules. [105] Running it a second time should result in no changes. [106]
@@ -48,7 +48,7 @@ Here is the report containing the generated stories for Epic 1:
 **Guidance:** Use the following details for implementation. Refer to the linked `docs/` files for broader context if needed.
 
 - **Relevant Files:**
-  - Files to Create/Copy: All files from `bmad-boilerplate` (e.g., `package.json`, `tsconfig.json`, `.eslintrc.js`, `.prettierrc.js`, `.gitignore`, initial `src/` structure if any).
+  - Files to Create/Copy: All files from `orchestrator-boilerplate` (e.g., `package.json`, `tsconfig.json`, `.eslintrc.js`, `.prettierrc.js`, `.gitignore`, initial `src/` structure if any).
   - Files to Modify: None initially, verification via script execution.
   - _(Hint: See `docs/project-structure.md` [813-825] for the target overall layout derived from the boilerplate)._
 - **Key Technologies:**
@@ -67,7 +67,7 @@ Here is the report containing the generated stories for Epic 1:
 
 ## Tasks / Subtasks
 
-- [ ] Obtain the `bmad-boilerplate` content (clone or copy).
+- [ ] Obtain the `orchestrator-boilerplate` content (clone or copy).
 - [ ] Place boilerplate content into the project's root directory.
 - [ ] Initialize git repository (`git init`).
 - [ ] Verify `.gitignore` exists and is correctly sourced from boilerplate.
@@ -161,7 +161,7 @@ Here is the report containing the generated stories for Epic 1:
 
 ## Tasks / Subtasks
 
-- [ ] Verify `bmad-boilerplate` provided `.env.example`.
+- [ ] Verify `orchestrator-boilerplate` provided `.env.example`.
 - [ ] Add `OUTPUT_DIR_PATH=./output` to `.env.example`.
 - [ ] Create `.env` file by copying `.env.example`.
 - [ ] Verify `.env` is included in `.gitignore`.
@@ -214,7 +214,7 @@ Here is the report containing the generated stories for Epic 1:
 - Create the main application entry point file at `src/index.ts`. [124]
 - Implement minimal code within `src/index.ts` to:
   - Import the configuration loading mechanism (from Story 1.2, e.g., `import config from './utils/config';`). [125]
-  - Log a simple startup message to the console (e.g., "BMad Hacker Daily Digest - Starting Up..."). [126]
+  - Log a simple startup message to the console (e.g., "Orchestrator Hacker Daily Digest - Starting Up..."). [126]
   - (Optional) Log the loaded `OUTPUT_DIR_PATH` from the imported config object to verify config loading. [127]
 - Confirm execution using boilerplate scripts (`npm run dev`, `npm run build`, `npm run start`). [127]
 
@@ -254,7 +254,7 @@ Here is the report containing the generated stories for Epic 1:
 
 - [ ] Create the file `src/index.ts`.
 - [ ] Add import statement for the configuration module (`src/utils/config.ts`).
-- [ ] Add `console.log("BMad Hacker Daily Digest - Starting Up...");` (or similar).
+- [ ] Add `console.log("Orchestrator Hacker Daily Digest - Starting Up...");` (or similar).
 - [ ] (Optional) Add `console.log(\`Output directory: \${config.OUTPUT_DIR_PATH}\`);`
 - [ ] Run `npm run dev` and verify console output (AC2, AC5 optional).
 - [ ] Run `npm run build` and verify successful compilation to `dist/` (AC3).

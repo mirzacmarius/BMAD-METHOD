@@ -1,10 +1,10 @@
-# V0.dev Prompt for BMad Daily Digest
+# V0.dev Prompt for Orchestrator Daily Digest
 
-**"BMad Daily Digest" MVP UI**
+**"Orchestrator Daily Digest" MVP UI**
 
 **Overall Project & Theme:**
 
-"Create a 3-page responsive web application called 'BMad Daily Digest' using Next.js (App Router), React, Tailwind CSS, and aiming for shadcn/ui compatible component structures where possible.
+"Create a 3-page responsive web application called 'Orchestrator Daily Digest' using Next.js (App Router), React, Tailwind CSS, and aiming for shadcn/ui compatible component structures where possible.
 
 The entire application must have a strong '80s retro CRT terminal' aesthetic. This means:
 * **Overall Dark Mode:** Use a near-black background (e.g., #0A0A0A or a very dark desaturated green like #051005).
@@ -20,11 +20,11 @@ The application needs to be responsive, adapting to single-column layouts on mob
 
 "1.  **Main Layout Wrapper:** A full-screen component that establishes the dark background and CRT theme for all pages.
 2.  **Header Component:**
-    * Displays the site title 'BMad Daily Digest' in the primary glowing green, styled prominently (perhaps with a slightly larger or more distinct retro font). Clicking the title should navigate to the Home/Episode List page.
+    * Displays the site title 'Orchestrator Daily Digest' in the primary glowing green, styled prominently (perhaps with a slightly larger or more distinct retro font). Clicking the title should navigate to the Home/Episode List page.
     * Contains simple text-based navigation links: 'Episodes' (links to home/list) and 'About'. These links should also use the glowing green text style and have clear hover/focus states.
     * The header should be responsive; on smaller screens, if navigation links become crowded, they can stack or be accessible via a simple themed menu icon (e.g., an ASCII-art style hamburger `☰`).
 3.  **Footer Component (Optional, Minimalist):**
-    * If included, a very simple text-based footer with a copyright notice (e.g., '© 2025 BMad Daily Digest') and perhaps repeat navigation links ('Episodes', 'About'), styled minimally in the secondary green text color."
+    * If included, a very simple text-based footer with a copyright notice (e.g., '© 2025 Orchestrator Daily Digest') and perhaps repeat navigation links ('Episodes', 'About'), styled minimally in the secondary green text color."
 
 **Page 1: Home / Episode List Page (Default Route `/`)**
 
@@ -59,10 +59,10 @@ The application needs to be responsive, adapting to single-column layouts on mob
 
 **Page 3: About Page (Static Route, e.g., `/about`)**
 
-"This page provides information about the 'BMad Daily Digest' service.
+"This page provides information about the 'Orchestrator Daily Digest' service.
 * It should use the shared Header and Footer (if applicable).
-* Display a clear heading like 'ABOUT BMAD DAILY DIGEST'.
-* The main content area should display static informational text. For placeholder text, use: 'BMad Daily Digest provides a daily audio summary of top Hacker News discussions for busy tech professionals, generated using AI. Our mission is to keep you informed, efficiently. All content is curated and processed to deliver key insights in an easily digestible audio format, presented with a unique retro-tech vibe.'
+* Display a clear heading like 'ABOUT ORCHESTRATOR DAILY DIGEST'.
+* The main content area should display static informational text. For placeholder text, use: 'Orchestrator Daily Digest provides a daily audio summary of top Hacker News discussions for busy tech professionals, generated using AI. Our mission is to keep you informed, efficiently. All content is curated and processed to deliver key insights in an easily digestible audio format, presented with a unique retro-tech vibe.'
 * All text and headings should adhere to the '80s retro CRT terminal' theme."
 
 ---

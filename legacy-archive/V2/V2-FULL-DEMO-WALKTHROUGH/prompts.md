@@ -1,11 +1,11 @@
 ````Markdown
-# BMad Hacker Daily Digest LLM Prompts
+# Orchestrator Hacker Daily Digest LLM Prompts
 
 This document defines the standard prompts used when interacting with the configured Ollama LLM for generating summaries. Centralizing these prompts ensures consistency and aids experimentation.
 
 ## Prompt Design Philosophy
 
-The goal of these prompts is to guide the LLM (e.g., Llama 3 or similar) to produce concise, informative summaries focusing on the key information relevant to the BMad Hacker Daily Digest's objective: quickly understanding the essence of an article or HN discussion.
+The goal of these prompts is to guide the LLM (e.g., Llama 3 or similar) to produce concise, informative summaries focusing on the key information relevant to the Orchestrator Hacker Daily Digest's objective: quickly understanding the essence of an article or HN discussion.
 
 ## Core Prompts
 

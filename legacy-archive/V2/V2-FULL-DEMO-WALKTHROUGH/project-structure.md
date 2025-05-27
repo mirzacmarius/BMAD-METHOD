@@ -1,9 +1,9 @@
-# BMad Hacker Daily Digest Project Structure
+# Orchestrator Hacker Daily Digest Project Structure
 
 This document outlines the standard directory and file structure for the project. Adhering to this structure ensures consistency and maintainability.
 
 ```plaintext
-bmad-hacker-daily-digest/
+orchestrator-hacker-daily-digest/
 ├── .github/                    # Optional: GitHub Actions workflows (if used)
 │   └── workflows/
 ├── .vscode/                    # Optional: VSCode editor settings

@@ -1,4 +1,4 @@
-# BMad Daily Digest Architecture Document
+# Orchestrator Daily Digest Architecture Document
 
 **Version:** 0.1
 **Date:** May 20, 2025
@@ -21,8 +21,8 @@
       * External Services
       * Component Interaction Diagram (Conceptual Backend Focus)
 6.  Project Structure
-      * Backend Repository (`bmad-daily-digest-backend`)
-      * Frontend Repository (`bmad-daily-digest-frontend`)
+      * Backend Repository (`orchestrator-daily-digest-backend`)
+      * Frontend Repository (`orchestrator-daily-digest-frontend`)
       * Notes
 7.  API Reference
       * External APIs Consumed
@@ -37,7 +37,7 @@
 10. Definitive Tech Stack Selections
 11. Infrastructure and Deployment Overview
 12. Error Handling Strategy
-13. Coding Standards (Backend: `bmad-daily-digest-backend`)
+13. Coding Standards (Backend: `orchestrator-daily-digest-backend`)
       * Detailed Language & Framework Conventions (TypeScript/Node.js - Backend Focus)
 14. Overall Testing Strategy
 15. Security Best Practices
@@ -49,26 +49,26 @@
 
 ## 1\. Introduction / Preamble
 
-This document outlines the overall project architecture for "BMad Daily Digest," including backend systems, frontend deployment infrastructure, shared services considerations, and non-UI specific concerns. Its primary goal is to serve as the guiding architectural blueprint for AI-driven development and human developers, ensuring consistency and adherence to chosen patterns and technologies as defined in the Product Requirements Document (PRD v0.1) and UI/UX Specification (v0.1).
+This document outlines the overall project architecture for "Orchestrator Daily Digest," including backend systems, frontend deployment infrastructure, shared services considerations, and non-UI specific concerns. Its primary goal is to serve as the guiding architectural blueprint for AI-driven development and human developers, ensuring consistency and adherence to chosen patterns and technologies as defined in the Product Requirements Document (PRD v0.1) and UI/UX Specification (v0.1).
 
 **Relationship to Frontend Architecture:**
 The frontend application (Next.js) will have its own detailed frontend architecture considerations (component structure, state management, etc.) which will be detailed in a separate Frontend Architecture Document (to be created by the Design Architect, Jane, based on a prompt at the end of this document). This overall Architecture Document will define the backend services the frontend consumes, the infrastructure for hosting the frontend (S3/CloudFront), and ensure alignment on shared technology choices (like TypeScript) and API contracts. The "Definitive Tech Stack Selections" section herein is the single source of truth for all major technology choices across the project.
 
 ## 2\. Technical Summary
 
-"BMad Daily Digest" is a serverless application designed to automatically produce a daily audio podcast summarizing top Hacker News posts. The backend, built with TypeScript on Node.js 22 and deployed as AWS Lambda functions, will fetch data from the Algolia HN API, scrape linked articles, process content, and use the Play.ai API for audio generation (with job status managed by AWS Step Functions polling). Podcast metadata will be stored in DynamoDB, and audio files in S3. All backend infrastructure will be managed via AWS CDK within its own repository.
+"Orchestrator Daily Digest" is a serverless application designed to automatically produce a daily audio podcast summarizing top Hacker News posts. The backend, built with TypeScript on Node.js 22 and deployed as AWS Lambda functions, will fetch data from the Algolia HN API, scrape linked articles, process content, and use the Play.ai API for audio generation (with job status managed by AWS Step Functions polling). Podcast metadata will be stored in DynamoDB, and audio files in S3. All backend infrastructure will be managed via AWS CDK within its own repository.
 
 The frontend will be a Next.js (React, TypeScript) application, styled with Tailwind CSS and shadcn/ui to an "80s retro CRT terminal" aesthetic, kickstarted by an AI UI generation tool. It will be a statically exported site hosted on AWS S3 and delivered globally via AWS CloudFront, with its infrastructure also managed by a separate AWS CDK application within its own repository. The frontend will consume data from the backend via an AWS API Gateway secured with API Keys. The entire system aims for cost-efficiency, leveraging AWS free-tier services where possible.
 
 ## 3\. High-Level Overview
 
-The "BMad Daily Digest" system is architected as a decoupled, serverless application designed for automated daily content aggregation and audio generation, with a statically generated frontend for content consumption.
+The "Orchestrator Daily Digest" system is architected as a decoupled, serverless application designed for automated daily content aggregation and audio generation, with a statically generated frontend for content consumption.
 
   * **Backend Architectural Style:** The backend employs a **serverless, event-driven architecture** leveraging AWS Lambda functions for discrete processing tasks. These tasks are orchestrated by AWS Step Functions to manage the daily content pipeline, including interactions with external services. An API layer is provided via AWS API Gateway for frontend consumption.
   * **Frontend Architectural Style:** The frontend is a **statically generated site (SSG)** built with Next.js. This approach maximizes performance, security, and cost-effectiveness by serving pre-built files from AWS S3 via CloudFront.
   * **Repository Structure:** The project utilizes a **polyrepo structure** with two primary repositories:
-      * `bmad-daily-digest-backend`: Housing all backend TypeScript code, AWS CDK for backend infrastructure, Lambda functions, Step Function definitions, etc.
-      * `bmad-daily-digest-frontend`: Housing the Next.js TypeScript application, UI components, styling, and its dedicated AWS CDK application for S3/CloudFront infrastructure.
+      * `orchestrator-daily-digest-backend`: Housing all backend TypeScript code, AWS CDK for backend infrastructure, Lambda functions, Step Function definitions, etc.
+      * `orchestrator-daily-digest-frontend`: Housing the Next.js TypeScript application, UI components, styling, and its dedicated AWS CDK application for S3/CloudFront infrastructure.
   * **Primary Data Flow & User Interaction (Conceptual):**
     1.  **Daily Automated Pipeline (Backend):**
           * An Amazon EventBridge Scheduler rule triggers an AWS Step Function state machine daily.
@@ -82,7 +82,7 @@ The "BMad Daily Digest" system is architected as a decoupled, serverless applica
               * Store the MP3 file in a designated S3 bucket.
               * Store episode metadata (including the S3 audio link, source HN post details, etc.) in a DynamoDB table and update HN post processing states.
     2.  **User Consumption (Frontend):**
-          * The user accesses the "BMad Daily Digest" Next.js web application served via AWS CloudFront from an S3 bucket.
+          * The user accesses the "Orchestrator Daily Digest" Next.js web application served via AWS CloudFront from an S3 bucket.
           * The frontend application makes API calls (via `axios`) to an AWS API Gateway endpoint (secured with an API Key).
           * API Gateway routes these requests to specific AWS Lambda functions that query the DynamoDB table to retrieve episode lists and details.
           * The frontend renders the information and provides an HTML5 audio player to stream/play the MP3 from its S3/CloudFront URL.
@@ -125,7 +125,7 @@ The following key architectural and design patterns have been chosen for this pr
 
 The system is divided into distinct backend and frontend components.
 
-**Backend Components (`bmad-daily-digest-backend` repository):**
+**Backend Components (`orchestrator-daily-digest-backend` repository):**
 
 1.  **Daily Workflow Orchestrator (AWS Step Functions state machine):** Manages the end-to-end daily pipeline.
 2.  **HN Data Fetcher Service (AWS Lambda):** Fetches HN posts/comments (Algolia), identifies repeats (via DynamoDB).
@@ -136,7 +136,7 @@ The system is divided into distinct backend and frontend components.
 7.  **Metadata Persistence Service (AWS Lambda & DynamoDB Tables):** Manages episode and HN post processing state metadata in DynamoDB.
 8.  **Backend API Service (AWS API Gateway + AWS Lambda functions):** Exposes endpoints for frontend (episode lists/details).
 
-**Frontend Components (`bmad-daily-digest-frontend` repository):**
+**Frontend Components (`orchestrator-daily-digest-frontend` repository):**
 
 1.  **Next.js Web Application (Static Site on S3/CloudFront):** Renders UI, handles navigation.
 2.  **Frontend API Client Service (TypeScript module):** Encapsulates communication with the Backend API Service.
@@ -200,11 +200,11 @@ graph LR
 
 The project utilizes a polyrepo structure with separate backend and frontend repositories, each with its own CDK application.
 
-**1. Backend Repository (`bmad-daily-digest-backend`)**
+**1. Backend Repository (`orchestrator-daily-digest-backend`)**
 Organized by features within `src/`, using `dash-case` for folders and files (e.g., `src/features/content-ingestion/hn-fetcher-service.ts`).
 
 ```plaintext
-bmad-daily-digest-backend/
+orchestrator-daily-digest-backend/
 ├── .github/
 ├── cdk/
 │   ├── bin/
@@ -228,11 +228,11 @@ bmad-daily-digest-backend/
 
 *Key Directories: `cdk/` for IaC, `src/features/` for modular backend logic, `src/shared/` for reusable code, `tests/` for Jest tests.*
 
-**2. Frontend Repository (`bmad-daily-digest-frontend`)**
+**2. Frontend Repository (`orchestrator-daily-digest-frontend`)**
 Aligns with V0.dev generated Next.js App Router structure, using `dash-case` for custom files/folders where applicable.
 
 ```plaintext
-bmad-daily-digest-frontend/
+orchestrator-daily-digest-frontend/
 ├── .github/
 ├── app/
 │   ├── (pages)/
@@ -291,7 +291,7 @@ bmad-daily-digest-frontend/
   * **Base URL Path Prefix:** `/v1` (Full URL from `NEXT_PUBLIC_BACKEND_API_URL`).
   * **Authentication:** Requires "Frontend Read API Key" via `x-api-key` header for GET endpoints. A separate "Admin Action API Key" for trigger endpoint.
   * **Endpoints:**
-      * **`GET /status`**: Health/status check. Response: `{"message": "BMad Daily Digest Backend is operational.", "timestamp": "..."}`.
+      * **`GET /status`**: Health/status check. Response: `{"message": "Orchestrator Daily Digest Backend is operational.", "timestamp": "..."}`.
       * **`GET /episodes`**: Lists episodes. Response: `{ "episodes": [EpisodeListItem, ...] }`.
       * **`GET /episodes/{episodeId}`**: Episode details. Response: `EpisodeDetail` object.
       * **`POST /jobs/daily-digest/trigger`**: (Admin Key) Triggers daily pipeline. Response: `{"message": "...", "executionArn": "..."}`.
@@ -517,9 +517,9 @@ sequenceDiagram
       * **Workflow (Step Functions):** Error handling, retries, catch blocks for states. Failed executions logged.
       * **Data Consistency:** Lambdas handle partial failures gracefully. Step Functions manage overall workflow state.
 
-## 13\. Coding Standards (Backend: `bmad-daily-digest-backend`)
+## 13\. Coding Standards (Backend: `orchestrator-daily-digest-backend`)
 
-**Scope:** Applies to `bmad-daily-digest-backend`. Frontend standards are separate.
+**Scope:** Applies to `orchestrator-daily-digest-backend`. Frontend standards are separate.
 
   * **Primary Language:** TypeScript (Node.js 22).
   * **Style:** ESLint, Prettier.
@@ -559,8 +559,8 @@ sequenceDiagram
 
 ## 16\. Key Reference Documents
 
-1.  **Product Requirements Document (PRD) - BMad Daily Digest** (Version: 0.1)
-2.  **UI/UX Specification - BMad Daily Digest** (Version: 0.1)
+1.  **Product Requirements Document (PRD) - Orchestrator Daily Digest** (Version: 0.1)
+2.  **UI/UX Specification - Orchestrator Daily Digest** (Version: 0.1)
 3.  **Algolia Hacker News Search API Documentation** (`https://hn.algolia.com/api`)
 4.  **Play.ai PlayNote API Documentation** (`https://docs.play.ai/api-reference/playnote/post`)
 

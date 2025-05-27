@@ -1,20 +1,20 @@
 # Epic 1: Project Initialization & Core Setup
 
-**Goal:** Initialize the project using the "bmad-boilerplate", manage dependencies, setup `.env` and config loading, establish basic CLI entry point, setup basic logging and output directory structure. This provides the foundational setup for all subsequent development work.
+**Goal:** Initialize the project using the "orchestrator-boilerplate", manage dependencies, setup `.env` and config loading, establish basic CLI entry point, setup basic logging and output directory structure. This provides the foundational setup for all subsequent development work.
 
 ## Story List
 
 ### Story 1.1: Initialize Project from Boilerplate
 
--   **User Story / Goal:** As a developer, I want to set up the initial project structure using the `bmad-boilerplate`, so that I have the standard tooling (TS, Jest, ESLint, Prettier), configurations, and scripts in place.
+-   **User Story / Goal:** As a developer, I want to set up the initial project structure using the `orchestrator-boilerplate`, so that I have the standard tooling (TS, Jest, ESLint, Prettier), configurations, and scripts in place.
 -   **Detailed Requirements:**
-    -   Copy or clone the contents of the `bmad-boilerplate` into the new project's root directory.
+    -   Copy or clone the contents of the `orchestrator-boilerplate` into the new project's root directory.
     -   Initialize a git repository in the project root directory (if not already done by cloning).
     -   Ensure the `.gitignore` file from the boilerplate is present.
     -   Run `npm install` to download and install all `devDependencies` specified in the boilerplate's `package.json`.
     -   Verify that the core boilerplate scripts (`lint`, `format`, `test`, `build`) execute without errors on the initial codebase.
 -   **Acceptance Criteria (ACs):**
-    -   AC1: The project directory contains the files and structure from `bmad-boilerplate`.
+    -   AC1: The project directory contains the files and structure from `orchestrator-boilerplate`.
     -   AC2: A `node_modules` directory exists and contains packages corresponding to `devDependencies`.
     -   AC3: `npm run lint` command completes successfully without reporting any linting errors.
     -   AC4: `npm run format` command completes successfully, potentially making formatting changes according to Prettier rules. Running it a second time should result in no changes.
@@ -50,7 +50,7 @@
     -   Create the main application entry point file at `src/index.ts`.
     -   Implement minimal code within `src/index.ts` to:
         -   Import the configuration loading mechanism (from Story 1.2).
-        -   Log a simple startup message to the console (e.g., "BMad Hacker Daily Digest - Starting Up...").
+        -   Log a simple startup message to the console (e.g., "Orchestrator Hacker Daily Digest - Starting Up...").
         -   (Optional) Log the loaded `OUTPUT_DIR_PATH` to verify config loading.
     -   Confirm execution using boilerplate scripts.
 -   **Acceptance Criteria (ACs):**

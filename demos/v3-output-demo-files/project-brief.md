@@ -1,8 +1,8 @@
-# Project Brief: BMad Daily Digest
+# Project Brief: Orchestrator Daily Digest
 
 ## 1. Introduction / Problem Statement
 
-- **The Core Idea is**: To create a daily podcast, "BMad Daily Digest," by scraping top Hacker News posts and their comments, then using an AI service (play.ai PlayNote) to generate an audio summary with two speakers.
+- **The Core Idea is**: To create a daily podcast, "Orchestrator Daily Digest," by scraping top Hacker News posts and their comments, then using an AI service (play.ai PlayNote) to generate an audio summary with two speakers.
 - **The Problem Being Solved is**: Busy professionals, especially in the tech world, find it hard to keep up with important discussions and news on platforms like Hacker News due to time constraints. They need a quick, digestible audio format to stay informed.
 
 ## 2. Vision & Goals
@@ -42,7 +42,7 @@
     - Submits the formatted text file to the play.ai PlayNote API.
     - Retrieves the generated audio file.
 4.  **Basic Web Application (for MVP delivery):**
-    - **List Page:** Displays a chronological list of daily "BMad Daily Digest" episodes.
+    - **List Page:** Displays a chronological list of daily "Orchestrator Daily Digest" episodes.
     - **Detail Page (per episode):**
       - Shows the list of individual Hacker News stories included in that day's digest.
       - Provides direct links to the original Hacker News post for each story.
@@ -53,13 +53,13 @@
 
 ## 5. Post MVP Features / Scope and Ideas
 
-After the successful launch and validation of the MVP, "BMad Daily Digest" could be enhanced with the following features:
+After the successful launch and validation of the MVP, "Orchestrator Daily Digest" could be enhanced with the following features:
 
 - **Daily Email Summary:**
   - Generate an email brief from the summarized transcript of the podcast (which can also be sourced from PlayNote).
   - Include a direct link to the day's podcast episode in the email.
 - **RSS Feed:**
-  - Provide a standard RSS feed, allowing users to subscribe to the "BMad Daily Digest" in their preferred podcast players.
+  - Provide a standard RSS feed, allowing users to subscribe to the "Orchestrator Daily Digest" in their preferred podcast players.
 - **User Accounts & Personalization:**
   - Allow users to create accounts.
   - Enable email subscription management through accounts.

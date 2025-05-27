@@ -1,4 +1,4 @@
-# BMad Hacker Daily Digest Data Models
+# Orchestrator Hacker Daily Digest Data Models
 
 This document defines the core data structures used within the application, the format of persisted data files, and relevant API payload schemas. These types would typically reside in `src/types/`.
 

@@ -5,12 +5,12 @@
 ## User Stories
 
 **Story 2.1: AWS CDK Extension for Epic 2 Resources**
-* **User Story Statement:** As a Developer, I need to extend the existing AWS CDK stack within the `bmad-daily-digest-backend` project to define and provision all new AWS resources required for the content ingestion and podcast generation pipeline—including the `BmadDailyDigestEpisodes` DynamoDB table (with GSI), the `HackerNewsPostProcessState` DynamoDB table, an S3 bucket for audio storage, and the AWS Step Functions state machine for orchestrating the Play.ai job status polling—so that all backend infrastructure for this epic is managed as code and ready for the application logic.
+* **User Story Statement:** As a Developer, I need to extend the existing AWS CDK stack within the `orchestrator-daily-digest-backend` project to define and provision all new AWS resources required for the content ingestion and podcast generation pipeline—including the `BmadDailyDigestEpisodes` DynamoDB table (with GSI), the `HackerNewsPostProcessState` DynamoDB table, an S3 bucket for audio storage, and the AWS Step Functions state machine for orchestrating the Play.ai job status polling—so that all backend infrastructure for this epic is managed as code and ready for the application logic.
 * **Acceptance Criteria (ACs):**
     1.  The existing AWS CDK application (from Epic 1) **must** be extended.
     2.  The `BmadDailyDigestEpisodes` DynamoDB table resource **must** be defined in CDK as specified in the System Architecture Document's "Data Models" section (with `episodeId` PK, key attributes like `publicationDate`, `episodeNumber`, `podcastGeneratedTitle`, `audioS3Key`, `audioS3Bucket`, `playAiJobId`, `playAiSourceAudioUrl`, `sourceHNPosts` list, `status`, `createdAt`, `updatedAt`), including a GSI for chronological sorting (e.g., PK `status`, SK `publicationDate`), and PAY_PER_REQUEST billing.
     3.  The `HackerNewsPostProcessState` DynamoDB table resource **must** be defined in CDK as specified in the System Architecture Document's "Data Models" section (with `hnPostId` PK and attributes like `lastCommentFetchTimestamp`, `lastSuccessfullyScrapedTimestamp`, `lastKnownRank`), and PAY_PER_REQUEST billing.
-    4.  An S3 bucket resource (e.g., `bmad-daily-digest-audio-{unique-suffix}`) **must** be defined via CDK for audio storage, with private access by default.
+    4.  An S3 bucket resource (e.g., `orchestrator-daily-digest-audio-{unique-suffix}`) **must** be defined via CDK for audio storage, with private access by default.
     5.  An AWS Step Functions state machine resource **must** be defined via CDK to manage the Play.ai job status polling workflow (as detailed in Story 2.6).
     6.  Necessary IAM roles and permissions for Lambda functions within this epic to interact with DynamoDB, S3, Step Functions, CloudWatch Logs **must** be defined via CDK, adhering to least privilege.
     7.  The updated CDK stack **must** synthesize (`cdk synth`) and deploy (`cdk deploy`) successfully.
@@ -107,7 +107,7 @@
     8.  Unit tests (Jest) mock `axios`, AWS SDK (S3, DynamoDB); verify data handling, storage, metadata construction for both tables, errors. All tests **must** pass.
 
 **Story 2.9: Daily Workflow Orchestration & Scheduling**
-* **User Story Statement:** As the System Administrator, I need the entire daily backend workflow (Stories 2.2 through 2.8) to be fully orchestrated by the primary AWS Step Function state machine and automatically scheduled to run once per day using Amazon EventBridge Scheduler, ensuring it handles re-runs for the same day by overwriting/starting over (for MVP), so that "BMad Daily Digest" episodes are produced consistently and reliably.
+* **User Story Statement:** As the System Administrator, I need the entire daily backend workflow (Stories 2.2 through 2.8) to be fully orchestrated by the primary AWS Step Function state machine and automatically scheduled to run once per day using Amazon EventBridge Scheduler, ensuring it handles re-runs for the same day by overwriting/starting over (for MVP), so that "Orchestrator Daily Digest" episodes are produced consistently and reliably.
 * **Acceptance Criteria (ACs):**
     1.  The primary AWS Step Function state machine **must** orchestrate the sequence: Fetch HN Posts & Identify Repeats (2.2); For each post: conditionally Scrape Article (2.3) & Fetch Comments (2.4); then Aggregate & Format Content (2.5); then Submit to Play.ai & get `jobId` (2.7); then initiate/manage Polling (2.6 using `jobId`); on "completed" polling, trigger Retrieve & Store Audio/Metadata (2.8).
     2.  State machine **must** manage data flow (inputs/outputs) between steps correctly.

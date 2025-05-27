@@ -27,7 +27,7 @@
   * **Base URL Path Prefix:** `/v1` (Full URL from `NEXT_PUBLIC_BACKEND_API_URL`).
   * **Authentication:** Requires "Frontend Read API Key" via `x-api-key` header for GET endpoints. A separate "Admin Action API Key" for trigger endpoint.
   * **Endpoints:**
-      * **`GET /status`**: Health/status check. Response: `{"message": "BMad Daily Digest Backend is operational.", "timestamp": "..."}`.
+      * **`GET /status`**: Health/status check. Response: `{"message": "Orchestrator Daily Digest Backend is operational.", "timestamp": "..."}`.
       * **`GET /episodes`**: Lists episodes. Response: `{ "episodes": [EpisodeListItem, ...] }`.
       * **`GET /episodes/{episodeId}`**: Episode details. Response: `EpisodeDetail` object.
       * **`POST /jobs/daily-digest/trigger`**: (Admin Key) Triggers daily pipeline. Response: `{"message": "...", "executionArn": "..."}`.

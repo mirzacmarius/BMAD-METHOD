@@ -1,8 +1,8 @@
-# BMad Hacker Daily Digest Architecture Document
+# Orchestrator Hacker Daily Digest Architecture Document
 
 ## Technical Summary
 
-The BMad Hacker Daily Digest is a command-line interface (CLI) tool designed to provide users with concise summaries of top Hacker News (HN) stories and their associated comment discussions . Built with TypeScript and Node.js (v22) , it operates entirely on the user's local machine . The core functionality involves a sequential pipeline: fetching story and comment data from the Algolia HN Search API , attempting to scrape linked article content , generating summaries using a local Ollama LLM instance , persisting intermediate data to the local filesystem , and finally assembling and emailing an HTML digest using Nodemailer . The architecture emphasizes modularity and testability, including mandatory standalone scripts for testing each pipeline stage . The project starts from the `bmad-boilerplate` template .
+The Orchestrator Hacker Daily Digest is a command-line interface (CLI) tool designed to provide users with concise summaries of top Hacker News (HN) stories and their associated comment discussions . Built with TypeScript and Node.js (v22) , it operates entirely on the user's local machine . The core functionality involves a sequential pipeline: fetching story and comment data from the Algolia HN Search API , attempting to scrape linked article content , generating summaries using a local Ollama LLM instance , persisting intermediate data to the local filesystem , and finally assembling and emailing an HTML digest using Nodemailer . The architecture emphasizes modularity and testability, including mandatory standalone scripts for testing each pipeline stage . The project starts from the `orchestrator-boilerplate` template .
 
 ## High-Level Overview
 
@@ -10,7 +10,7 @@ The application follows a simple, sequential pipeline architecture executed via 
 
 ```mermaid
 graph LR
-    subgraph "BMad Hacker Daily Digest (Local CLI)"
+    subgraph "Orchestrator Hacker Daily Digest (Local CLI)"
         A[index.ts / CLI Trigger] --> B(core/pipeline.ts);
         B --> C{Fetch HN Data};
         B --> D{Scrape Articles};

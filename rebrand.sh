@@ -34,6 +34,20 @@ for file in $files; do
         sed -i '' 's/\bBMAD\b/ORCHESTRATOR/g' "$file"
         sed -i '' 's/\bBMad\b/Orchestrator/g' "$file"
         
+        # Additional specific patterns that might have been missed
+        sed -i '' 's/BMad /Orchestrator /g' "$file"
+        sed -i '' 's/BMAD /ORCHESTRATOR /g' "$file"
+        sed -i '' 's/bmad /orchestrator /g' "$file"
+        sed -i '' 's/BMad-/Orchestrator-/g' "$file"
+        sed -i '' 's/BMAD-/ORCHESTRATOR-/g' "$file"
+        sed -i '' 's/bmad-/orchestrator-/g' "$file"
+        sed -i '' 's/"BMad/"Orchestrator/g' "$file"
+        sed -i '' 's/"BMAD/"ORCHESTRATOR/g' "$file"
+        sed -i '' 's/"bmad/"orchestrator/g' "$file"
+        sed -i '' "s/'BMad/'Orchestrator/g" "$file"
+        sed -i '' "s/'BMAD/'ORCHESTRATOR/g" "$file"
+        sed -i '' "s/'bmad/'orchestrator/g" "$file"
+        
         # Special cases for specific contexts
         sed -i '' 's/Breakthrough Method of Agile (ai-driven) Development/AI Agent Orchestration Framework for Agile Development/g' "$file"
         sed -i '' 's/Thank you and enjoy - BMad!/Thank you and enjoy - Orchestrator!/g' "$file"

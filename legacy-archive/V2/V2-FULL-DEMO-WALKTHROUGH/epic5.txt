@@ -99,12 +99,12 @@
             -   If yes:
                 -   Get the current date string (e.g., 'YYYY-MM-DD').
                 -   `const htmlContent = renderDigestHtml(digestData, currentDate)`.
-                -   `const subject = \`BMad Hacker Daily Digest - ${currentDate}\``.
+                -   `const subject = \`Orchestrator Hacker Daily Digest - ${currentDate}\``.
                 -   `const emailSent = await sendDigestEmail(subject, htmlContent)`.
                 -   Log the final outcome based on `emailSent` ("Digest email sent successfully." or "Failed to send digest email.").
             -   If no (`digestData` is empty or assembly failed):
                 -   Log an error: "Failed to assemble digest data or no data found. Skipping email."
-        -   Log "BMad Hacker Daily Digest process finished."
+        -   Log "Orchestrator Hacker Daily Digest process finished."
 -   **Acceptance Criteria (ACs):**
     -   AC1: Running `npm run dev` executes all stages (Epics 1-4) and then proceeds to email assembly and sending.
     -   AC2: `assembleDigestData` is called correctly with the output directory path after other processing is done.

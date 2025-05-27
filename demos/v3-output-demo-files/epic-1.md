@@ -9,9 +9,9 @@
 ## User Stories
 
 **Story 1.1: Initialize Backend Project using TS-TEMPLATE-STARTER**
-* **User Story Statement:** As a Developer, I want to create the `bmad-daily-digest-backend` Git repository and initialize it using the existing `TS-TEMPLATE-STARTER`, ensuring all foundational tooling (TypeScript, Node.js 22, ESLint, Prettier, Jest, esbuild) is correctly configured and operational for this specific project, so that I have a high-quality, standardized development environment ready for application logic.
+* **User Story Statement:** As a Developer, I want to create the `orchestrator-daily-digest-backend` Git repository and initialize it using the existing `TS-TEMPLATE-STARTER`, ensuring all foundational tooling (TypeScript, Node.js 22, ESLint, Prettier, Jest, esbuild) is correctly configured and operational for this specific project, so that I have a high-quality, standardized development environment ready for application logic.
 * **Acceptance Criteria (ACs):**
-    1.  A new, private Git repository named `bmad-daily-digest-backend` **must** be created on GitHub.
+    1.  A new, private Git repository named `orchestrator-daily-digest-backend` **must** be created on GitHub.
     2.  The contents of the `TS-TEMPLATE-STARTER` project **must** be copied/cloned into this new repository.
     3.  `package.json` **must** be updated (project name, version, description).
     4.  Project dependencies **must** be installable.
@@ -22,7 +22,7 @@
     9.  A standard `.gitignore` and an updated project `README.md` **must** be present.
 
 **Story 1.2: Pre-commit Hook Implementation**
-* **User Story Statement:** As a Developer, I want pre-commit hooks automatically enforced in the `bmad-daily-digest-backend` repository, so that code quality standards (like linting and formatting) are checked and applied to staged files before any code is committed, thereby maintaining codebase consistency and reducing trivial errors.
+* **User Story Statement:** As a Developer, I want pre-commit hooks automatically enforced in the `orchestrator-daily-digest-backend` repository, so that code quality standards (like linting and formatting) are checked and applied to staged files before any code is committed, thereby maintaining codebase consistency and reducing trivial errors.
 * **Acceptance Criteria (ACs):**
     1.  A pre-commit hook tool (e.g., Husky) **must** be installed and configured.
     2.  A tool for running linters/formatters on staged files (e.g., `lint-staged`) **must** be installed and configured.
@@ -33,11 +33,11 @@
     7.  Committing clean files **must** proceed without issues.
 
 **Story 1.3: "Hello World" Lambda Function Implementation & Unit Tests**
-* **User Story Statement:** As a Developer, I need a simple "Hello World" AWS Lambda function implemented in TypeScript within the `bmad-daily-digest-backend` project. This function, when invoked, should return a dynamic greeting message including the current date and time, and it must be accompanied by comprehensive Jest unit tests, so that our basic serverless compute functionality, testing setup, and TypeScript bundling are validated.
+* **User Story Statement:** As a Developer, I need a simple "Hello World" AWS Lambda function implemented in TypeScript within the `orchestrator-daily-digest-backend` project. This function, when invoked, should return a dynamic greeting message including the current date and time, and it must be accompanied by comprehensive Jest unit tests, so that our basic serverless compute functionality, testing setup, and TypeScript bundling are validated.
 * **Acceptance Criteria (ACs):**
     1.  A `src/features/publicApi/statusHandler.ts` file (or similar according to final backend structure) **must** contain the Lambda handler.
     2.  Handler **must** be AWS Lambda compatible (event, context, Promise response).
-    3.  Successful execution **must** return JSON: `statusCode: 200`, body with `message: "Hello from BMad Daily Digest Backend, today is [current_date] at [current_time]."`.
+    3.  Successful execution **must** return JSON: `statusCode: 200`, body with `message: "Hello from Orchestrator Daily Digest Backend, today is [current_date] at [current_time]."`.
     4.  Date and time in message **must** be dynamic.
     5.  A corresponding Jest unit test file (e.g., `src/features/publicApi/statusHandler.test.ts`) **must** be created.
     6.  Unit tests **must** verify: 200 status, valid JSON body, expected `message` field, "Hello from..." prefix, dynamic date/time portion (use mocked `Date`).
@@ -67,7 +67,7 @@
     6.  Basic Lambda invocation logs **must** be visible in AWS CloudWatch Logs.
 
 **Story 1.6: Basic CI/CD Pipeline Stub with Quality Gates**
-* **User Story Statement:** As a Developer, I need a basic Continuous Integration (CI) pipeline established for the `bmad-daily-digest-backend` repository, so that code quality checks (linting, formatting, unit tests) and the build process are automated upon code pushes and pull requests, ensuring early feedback and maintaining codebase health.
+* **User Story Statement:** As a Developer, I need a basic Continuous Integration (CI) pipeline established for the `orchestrator-daily-digest-backend` repository, so that code quality checks (linting, formatting, unit tests) and the build process are automated upon code pushes and pull requests, ensuring early feedback and maintaining codebase health.
 * **Acceptance Criteria (ACs):**
     1.  A CI workflow file (e.g., GitHub Actions in `.github/workflows/main.yml`) **must** be created.
     2.  Pipeline **must** trigger on pushes to `main` and PRs targeting `main`.

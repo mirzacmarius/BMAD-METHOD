@@ -1,8 +1,8 @@
-# Project Brief: BMad Hacker Daily Digest
+# Project Brief: Orchestrator Hacker Daily Digest
 
 ## Introduction / Problem Statement
 
-Hacker News (HN) comment threads contain valuable insights but can be prohibitively long to read thoroughly. The BMad Hacker Daily Digest project aims to solve this by providing a time-efficient way to stay informed about the collective intelligence within HN discussions. The service will automatically fetch the top 10 HN stories daily, retrieve a manageable subset of their comments using the Algolia HN API, generate concise summaries of both the linked article (when possible) and the comment discussion using an LLM, and deliver these summaries in a daily email briefing. This project also serves as a practical learning exercise focused on agent-driven development, TypeScript, Node.js backend services, API integration, and local LLM usage with Ollama.
+Hacker News (HN) comment threads contain valuable insights but can be prohibitively long to read thoroughly. The Orchestrator Hacker Daily Digest project aims to solve this by providing a time-efficient way to stay informed about the collective intelligence within HN discussions. The service will automatically fetch the top 10 HN stories daily, retrieve a manageable subset of their comments using the Algolia HN API, generate concise summaries of both the linked article (when possible) and the comment discussion using an LLM, and deliver these summaries in a daily email briefing. This project also serves as a practical learning exercise focused on agent-driven development, TypeScript, Node.js backend services, API integration, and local LLM usage with Ollama.
 
 ## Vision & Goals
 
@@ -75,11 +75,11 @@ Local LLM Viability: Ollama confirmed as viable for local MVP development/testin
 
 ## PM Prompt
 
-**PM Agent Handoff Prompt: BMad Hacker Daily Digest**
+**PM Agent Handoff Prompt: Orchestrator Hacker Daily Digest**
 
 **Summary of Key Insights:**
 
-This Project Brief outlines the "BMad Hacker Daily Digest," a command-line tool designed to provide daily email summaries of discussions from top Hacker News (HN) comment threads. The core problem is the time required to read lengthy but valuable HN discussions. The MVP aims to fetch the top 10 HN stories, retrieve a limited set of comments via the Algolia HN API, attempt basic scraping of linked articles (with fallback), generate separate summaries for articles (if scraped) and comments using a local LLM (Ollama), and email the digest to the developer using Nodemailer. This project primarily serves as a learning exercise and demonstration of agent-driven development in TypeScript.
+This Project Brief outlines the "Orchestrator Hacker Daily Digest," a command-line tool designed to provide daily email summaries of discussions from top Hacker News (HN) comment threads. The core problem is the time required to read lengthy but valuable HN discussions. The MVP aims to fetch the top 10 HN stories, retrieve a limited set of comments via the Algolia HN API, attempt basic scraping of linked articles (with fallback), generate separate summaries for articles (if scraped) and comments using a local LLM (Ollama), and email the digest to the developer using Nodemailer. This project primarily serves as a learning exercise and demonstration of agent-driven development in TypeScript.
 
 **Areas Requiring Special Attention (for PRD):**
 

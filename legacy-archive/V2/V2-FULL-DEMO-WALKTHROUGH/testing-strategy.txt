@@ -1,13 +1,13 @@
-# BMad Hacker Daily Digest Testing Strategy
+# Orchestrator Hacker Daily Digest Testing Strategy
 
 ## Overall Philosophy & Goals
 
-The testing strategy for the BMad Hacker Daily Digest MVP focuses on pragmatic validation of the core pipeline functionality and individual component logic. Given it's a local CLI tool with a sequential process, the emphasis is on:
+The testing strategy for the Orchestrator Hacker Daily Digest MVP focuses on pragmatic validation of the core pipeline functionality and individual component logic. Given it's a local CLI tool with a sequential process, the emphasis is on:
 
 1.  **Functional Correctness:** Ensuring each stage of the pipeline (fetch, scrape, summarize, email) performs its task correctly according to the requirements.
 2.  **Integration Verification:** Confirming that data flows correctly between pipeline stages via the local filesystem.
 3.  **Robustness (Key Areas):** Specifically testing graceful handling of expected failures, particularly in article scraping .
-4.  **Leveraging Boilerplate:** Utilizing the Jest testing framework provided by `bmad-boilerplate` for automated unit and integration tests .
+4.  **Leveraging Boilerplate:** Utilizing the Jest testing framework provided by `orchestrator-boilerplate` for automated unit and integration tests .
 5.  **Stage-Based Acceptance:** Using the mandatory **Stage Testing Utilities** as the primary mechanism for end-to-end validation of each phase against real external interactions (where applicable) .
 
 The primary goal is confidence in the MVP's end-to-end execution and the correctness of the generated email digest. High code coverage is secondary to testing critical paths and integration points.
@@ -17,7 +17,7 @@ The primary goal is confidence in the MVP's end-to-end execution and the correct
 ### Unit Tests
 
 - **Scope:** Test individual functions, methods, or modules in isolation. Focus on business logic within utilities (`src/utils/`), clients (`src/clients/` - mocking HTTP calls), scraping logic (`src/scraper/` - mocking HTTP calls), email templating (`src/email/templates.ts`), and potentially core pipeline orchestration logic (`src/core/pipeline.ts` - mocking stage implementations).
-- **Tools:** Jest (provided by `bmad-boilerplate`). Use `npm run test`.
+- **Tools:** Jest (provided by `orchestrator-boilerplate`). Use `npm run test`.
 - **Mocking/Stubbing:** Utilize Jest's built-in mocking capabilities (`jest.fn()`, `jest.spyOn()`, manual mocks in `__mocks__`) to isolate units under test from external dependencies (native `Workspace` API, `fs`, other modules, external libraries like `nodemailer`, `ollamaClient`).
 - **Location:** `test/unit/`, mirroring the `src/` directory structure.
 - **Expectations:** Cover critical logic branches, calculations, and helper functions. Ensure tests are fast and run reliably. Aim for good coverage of utility functions and complex logic within modules.

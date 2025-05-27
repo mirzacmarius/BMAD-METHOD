@@ -1,6 +1,6 @@
 # Technology Stack
 
-The following table outlines the definitive technology selections for the BMad Daily Digest project:
+The following table outlines the definitive technology selections for the Orchestrator Daily Digest project:
 
 | Category             | Technology                     | Version / Details                      | Description / Purpose                                                                 | Justification (Optional)                                                                 |
 | :------------------- | :----------------------------- | :------------------------------------- | :------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- |

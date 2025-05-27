@@ -1,4 +1,4 @@
-# BMad Daily Digest Product Requirements Document (PRD)
+# Orchestrator Daily Digest Product Requirements Document (PRD)
 
 **Version:** 0.1
 **Date:** May 20, 2025
@@ -7,14 +7,14 @@
 ## 1. Goal, Objective and Context
 
 * **Overall Goal:** To provide busy tech executives with a quick, daily audio digest of top Hacker News posts and discussions, enabling them to stay effortlessly informed.
-* **Project Objective (MVP Focus):** To successfully launch the "BMad Daily Digest" by:
+* **Project Objective (MVP Focus):** To successfully launch the "Orchestrator Daily Digest" by:
     * Automating the daily fetching of top 10 Hacker News posts (article metadata and comments via Algolia HN API) and scraping of linked article content.
     * Processing this content into a structured format.
     * Generating a 2-agent audio podcast using the play.ai PlayNote API.
     * Delivering the podcast via a simple Next.js web application (polyrepo structure) with a list of episodes and detail pages including an audio player and links to source materials.
     * Operating this process daily, aiming for delivery by a consistent morning hour.
     * Adhering to a full TypeScript stack (Node.js 22 for backend), with a Next.js frontend, AWS Lambda backend, DynamoDB, S3, and AWS CDK for IaC, while aiming to stay within AWS free-tier limits where possible.
-* **Context/Problem Solved:** Busy tech executives lack the time to thoroughly read Hacker News daily but need to stay updated on key tech discussions, trends, and news for strategic insights. "BMad Daily Digest" solves this by offering a convenient, curated audio summary.
+* **Context/Problem Solved:** Busy tech executives lack the time to thoroughly read Hacker News daily but need to stay updated on key tech discussions, trends, and news for strategic insights. "Orchestrator Daily Digest" solves this by offering a convenient, curated audio summary.
 
 ## 2. Functional Requirements (MVP)
 
@@ -43,7 +43,7 @@
 
 **FR4: Web Application Interface (MVP)**
 * The system **must** provide a web application (Next.js, "80s retro CRT terminal" theme with Tailwind CSS & shadcn/ui) with a **List Page** that:
-    * Displays a chronological list (newest first) of all generated "BMad Daily Digest" episodes, formatted as "Episode [EpisodeNumber]: [PublicationDate] - [PodcastTitle]".
+    * Displays a chronological list (newest first) of all generated "Orchestrator Daily Digest" episodes, formatted as "Episode [EpisodeNumber]: [PublicationDate] - [PodcastTitle]".
     * Allows users to navigate to a Detail Page for each episode.
 * The system **must** provide a web application with a **Detail Page** for each episode that:
     * Displays the `podcastGeneratedTitle`, `publicationDate`, and `episodeNumber`.
@@ -119,7 +119,7 @@
 * **Coding Standards:** JSDoc for functions, inline comments for clarity. ESLint, Prettier.
 
 **b. Repository Structure & Service Architecture:**
-* **Repository Structure:** Polyrepo (separate Git repositories for `bmad-daily-digest-frontend` and `bmad-daily-digest-backend`).
+* **Repository Structure:** Polyrepo (separate Git repositories for `orchestrator-daily-digest-frontend` and `orchestrator-daily-digest-backend`).
 * **High-Level Service Architecture:** Backend is serverless functions (AWS Lambda) for distinct tasks, orchestrated by Step Functions. API layer via AWS API Gateway to expose backend to frontend.
 
 ## 6. Epic Overview
@@ -135,9 +135,9 @@ This section details the Epics and their User Stories for the MVP.
 * **User Stories for Epic 1:**
 
     **Story 1.1: Initialize Backend Project using TS-TEMPLATE-STARTER**
-    * **User Story Statement:** As a Developer, I want to create the `bmad-daily-digest-backend` Git repository and initialize it using the existing `TS-TEMPLATE-STARTER`, ensuring all foundational tooling (TypeScript, Node.js 22, ESLint, Prettier, Jest, esbuild) is correctly configured and operational for this specific project, so that I have a high-quality, standardized development environment ready for application logic.
+    * **User Story Statement:** As a Developer, I want to create the `orchestrator-daily-digest-backend` Git repository and initialize it using the existing `TS-TEMPLATE-STARTER`, ensuring all foundational tooling (TypeScript, Node.js 22, ESLint, Prettier, Jest, esbuild) is correctly configured and operational for this specific project, so that I have a high-quality, standardized development environment ready for application logic.
     * **Acceptance Criteria (ACs):**
-        1.  A new, private Git repository named `bmad-daily-digest-backend` **must** be created on GitHub.
+        1.  A new, private Git repository named `orchestrator-daily-digest-backend` **must** be created on GitHub.
         2.  The contents of the `TS-TEMPLATE-STARTER` project **must** be copied/cloned into this new repository.
         3.  `package.json` **must** be updated (project name, version, description).
         4.  Project dependencies **must** be installable.
@@ -148,7 +148,7 @@ This section details the Epics and their User Stories for the MVP.
         9.  A standard `.gitignore` and an updated project `README.md` **must** be present.
 
     **Story 1.2: Pre-commit Hook Implementation**
-    * **User Story Statement:** As a Developer, I want pre-commit hooks automatically enforced in the `bmad-daily-digest-backend` repository, so that code quality standards (like linting and formatting) are checked and applied to staged files before any code is committed, thereby maintaining codebase consistency and reducing trivial errors.
+    * **User Story Statement:** As a Developer, I want pre-commit hooks automatically enforced in the `orchestrator-daily-digest-backend` repository, so that code quality standards (like linting and formatting) are checked and applied to staged files before any code is committed, thereby maintaining codebase consistency and reducing trivial errors.
     * **Acceptance Criteria (ACs):**
         1.  A pre-commit hook tool (e.g., Husky) **must** be installed and configured.
         2.  A tool for running linters/formatters on staged files (e.g., `lint-staged`) **must** be installed and configured.
@@ -159,11 +159,11 @@ This section details the Epics and their User Stories for the MVP.
         7.  Committing clean files **must** proceed without issues.
 
     **Story 1.3: "Hello World" Lambda Function Implementation & Unit Tests**
-    * **User Story Statement:** As a Developer, I need a simple "Hello World" AWS Lambda function implemented in TypeScript within the `bmad-daily-digest-backend` project. This function, when invoked, should return a dynamic greeting message including the current date and time, and it must be accompanied by comprehensive Jest unit tests, so that our basic serverless compute functionality, testing setup, and TypeScript bundling are validated.
+    * **User Story Statement:** As a Developer, I need a simple "Hello World" AWS Lambda function implemented in TypeScript within the `orchestrator-daily-digest-backend` project. This function, when invoked, should return a dynamic greeting message including the current date and time, and it must be accompanied by comprehensive Jest unit tests, so that our basic serverless compute functionality, testing setup, and TypeScript bundling are validated.
     * **Acceptance Criteria (ACs):**
         1.  A `src/handlers/helloWorldHandler.ts` file (or similar) **must** contain the Lambda handler.
         2.  Handler **must** be AWS Lambda compatible (event, context, Promise response).
-        3.  Successful execution **must** return JSON: `statusCode: 200`, body with `message: "Hello from BMad Daily Digest Backend, today is [current_date] at [current_time]."`.
+        3.  Successful execution **must** return JSON: `statusCode: 200`, body with `message: "Hello from Orchestrator Daily Digest Backend, today is [current_date] at [current_time]."`.
         4.  Date and time in message **must** be dynamic.
         5.  A corresponding Jest unit test file (e.g., `src/handlers/helloWorldHandler.test.ts`) **must** be created.
         6.  Unit tests **must** verify: 200 status, valid JSON body, expected `message` field, "Hello from..." prefix, dynamic date/time portion (use mocked `Date`).
@@ -193,7 +193,7 @@ This section details the Epics and their User Stories for the MVP.
         6.  Basic Lambda invocation logs **must** be visible in AWS CloudWatch Logs.
 
     **Story 1.6: Basic CI/CD Pipeline Stub with Quality Gates**
-    * **User Story Statement:** As a Developer, I need a basic Continuous Integration (CI) pipeline established for the `bmad-daily-digest-backend` repository, so that code quality checks (linting, formatting, unit tests) and the build process are automated upon code pushes and pull requests, ensuring early feedback and maintaining codebase health.
+    * **User Story Statement:** As a Developer, I need a basic Continuous Integration (CI) pipeline established for the `orchestrator-daily-digest-backend` repository, so that code quality checks (linting, formatting, unit tests) and the build process are automated upon code pushes and pull requests, ensuring early feedback and maintaining codebase health.
     * **Acceptance Criteria (ACs):**
         1.  A CI workflow file (e.g., GitHub Actions in `.github/workflows/main.yml`) **must** be created.
         2.  Pipeline **must** trigger on pushes to `main` and PRs targeting `main`.
@@ -210,12 +210,12 @@ This section details the Epics and their User Stories for the MVP.
 **User Stories for Epic 2:**
 
 **Story 2.1: AWS CDK Extension for Epic 2 Resources**
-* **User Story Statement:** As a Developer, I need to extend the existing AWS CDK stack within the `bmad-daily-digest-backend` project to define and provision all new AWS resources required for the content ingestion and podcast generation pipeline—including a DynamoDB table for episode and processed post metadata, an S3 bucket for audio storage, and the AWS Step Functions state machine for orchestrating the Play.ai job status polling—so that all backend infrastructure for this epic is managed as code and ready for the application logic.
+* **User Story Statement:** As a Developer, I need to extend the existing AWS CDK stack within the `orchestrator-daily-digest-backend` project to define and provision all new AWS resources required for the content ingestion and podcast generation pipeline—including a DynamoDB table for episode and processed post metadata, an S3 bucket for audio storage, and the AWS Step Functions state machine for orchestrating the Play.ai job status polling—so that all backend infrastructure for this epic is managed as code and ready for the application logic.
 * **Acceptance Criteria (ACs):**
     1.  The existing AWS CDK application (from Epic 1) **must** be extended with new resource definitions for Epic 2.
     2.  A DynamoDB table (e.g., `BmadDailyDigestEpisodes`) **must** be defined via CDK for episode metadata, with `episodeId` (String UUID) as PK, key attributes (`publicationDate`, `episodeNumber`, `podcastGeneratedTitle`, `audioS3Key`, `audioS3Bucket`, `playAiJobId`, `playAiSourceAudioUrl`, `sourceHNPosts` (List of objects: `{ hnPostId, title, originalArticleUrl, hnLink, isUpdateStatus, lastCommentFetchTimestamp, oldRank }`), `status`, `createdAt`), and PAY_PER_REQUEST billing.
     3.  A DynamoDB table or GSI strategy **must** be defined via CDK to efficiently track processed Hacker News posts (`hnPostId`) and their `lastCommentFetchTimestamp` to support the "new comments only" feature.
-    4.  An S3 bucket (e.g., `bmad-daily-digest-audio-{unique-suffix}`) **must** be defined via CDK for audio storage, with private access.
+    4.  An S3 bucket (e.g., `orchestrator-daily-digest-audio-{unique-suffix}`) **must** be defined via CDK for audio storage, with private access.
     5.  An AWS Step Functions state machine **must** be defined via CDK to manage the Play.ai job status polling workflow (details in Story 2.6).
     6.  Necessary IAM roles/permissions for Lambdas to interact with DynamoDB, S3, Step Functions, CloudWatch Logs **must** be defined via CDK.
     7.  The updated CDK stack **must** synthesize (`cdk synth`) and deploy (`cdk deploy`) successfully.
@@ -313,7 +313,7 @@ This section details the Epics and their User Stories for the MVP.
     8.  Unit tests (Jest) mock `axios`, AWS SDK (S3, DynamoDB); verify data handling, storage, metadata, errors. All tests **must** pass.
 
 **Story 2.9: Daily Workflow Orchestration & Scheduling**
-* **User Story Statement:** As the System Administrator, I need the entire daily backend workflow (Stories 2.2 through 2.8) to be fully orchestrated by the primary AWS Step Function state machine and automatically scheduled to run once per day using Amazon EventBridge Scheduler, ensuring it handles re-runs for the same day by overwriting/starting over (for MVP), so that "BMad Daily Digest" episodes are produced consistently and reliably.
+* **User Story Statement:** As the System Administrator, I need the entire daily backend workflow (Stories 2.2 through 2.8) to be fully orchestrated by the primary AWS Step Function state machine and automatically scheduled to run once per day using Amazon EventBridge Scheduler, ensuring it handles re-runs for the same day by overwriting/starting over (for MVP), so that "Orchestrator Daily Digest" episodes are produced consistently and reliably.
 * **Acceptance Criteria (ACs):**
     1.  The primary AWS Step Function state machine **must** orchestrate the sequence: Call Lambdas/services for Fetch HN Posts (2.2), then for each post: Scrape Article (2.3) & Fetch Comments (2.4); then Aggregate & Format (2.5); then Submit to Play.ai (2.7 which returns `jobId`); then initiate Polling (2.6 using `jobId`); on "completed" polling, trigger Retrieve & Store Audio/Metadata (2.8).
     2.  State machine **must** manage data flow between steps.
@@ -327,14 +327,14 @@ This section details the Epics and their User Stories for the MVP.
 ---
 **Epic 3: Web Application MVP & Podcast Consumption**
 
-**Goal:** To set up the frontend project in its dedicated repository and develop and deploy the Next.js frontend application MVP, enabling users to consume the "BMad Daily Digest." This includes initial project setup (AI-assisted UI kickstart), pages for listing and detailing episodes, an about page, and deployment.
+**Goal:** To set up the frontend project in its dedicated repository and develop and deploy the Next.js frontend application MVP, enabling users to consume the "Orchestrator Daily Digest." This includes initial project setup (AI-assisted UI kickstart), pages for listing and detailing episodes, an about page, and deployment.
 
 **User Stories for Epic 3:**
 
 **Story 3.1: Frontend Project Repository & Initial UI Setup (AI-Assisted)**
-* **User Story Statement:** As a Developer, I need to establish the `bmad-daily-digest-frontend` Git repository with a new Next.js (TypeScript, Node.js 22) project. This foundational setup must include essential development tooling (ESLint, Prettier, Jest with React Testing Library, a basic CI stub), and integrate an initial UI structure and core presentational components—kickstarted by an AI UI generation tool—styled with Tailwind CSS and shadcn/ui to embody the "80s retro CRT terminal" aesthetic, so that a high-quality, styled, and standardized frontend development environment is ready for building application features.
+* **User Story Statement:** As a Developer, I need to establish the `orchestrator-daily-digest-frontend` Git repository with a new Next.js (TypeScript, Node.js 22) project. This foundational setup must include essential development tooling (ESLint, Prettier, Jest with React Testing Library, a basic CI stub), and integrate an initial UI structure and core presentational components—kickstarted by an AI UI generation tool—styled with Tailwind CSS and shadcn/ui to embody the "80s retro CRT terminal" aesthetic, so that a high-quality, styled, and standardized frontend development environment is ready for building application features.
 * **Acceptance Criteria (ACs):**
-    1.  A new, private Git repository `bmad-daily-digest-frontend` **must** be created on GitHub.
+    1.  A new, private Git repository `orchestrator-daily-digest-frontend` **must** be created on GitHub.
     2.  A Next.js project (TypeScript, targeting Node.js 22) **must** be initialized.
     3.  Tooling (ESLint for Next.js/React/TS, Prettier, Jest with React Testing Library) **must** be installed and configured.
     4.  NPM scripts for lint, format, test, build **must** be in `package.json`.
@@ -346,7 +346,7 @@ This section details the Epics and their User Stories for the MVP.
     10. A standard Next.js `.gitignore` and an updated `README.md` **must** be present.
 
 **Story 3.2: Frontend API Service Layer for Backend Communication**
-* **User Story Statement:** As a Frontend Developer, I need a dedicated and well-typed API service layer within the Next.js frontend application to manage all HTTP communication with the "BMad Daily Digest" backend API (for fetching episode lists and specific episode details), so that UI components can cleanly and securely consume backend data with robust error handling.
+* **User Story Statement:** As a Frontend Developer, I need a dedicated and well-typed API service layer within the Next.js frontend application to manage all HTTP communication with the "Orchestrator Daily Digest" backend API (for fetching episode lists and specific episode details), so that UI components can cleanly and securely consume backend data with robust error handling.
 * **Acceptance Criteria (ACs):**
     1.  A TypeScript module (e.g., `src/services/apiClient.ts`) **must** encapsulate backend API interactions.
     2.  Functions **must** exist for: fetching all podcast episodes (e.g., `getEpisodes()`) and fetching details for a single episode by `episodeId` (e.g., `getEpisodeDetails(episodeId)`).
@@ -358,7 +358,7 @@ This section details the Epics and their User Stories for the MVP.
     8.  Unit tests (Jest) **must** mock `axios` and verify API calls, data parsing/transformation, and error handling. All tests **must** pass.
 
 **Story 3.3: Episode List Page Implementation**
-* **User Story Statement:** As a Busy Tech Executive, I want to view a responsive "Episode List Page" that clearly displays all available "BMad Daily Digest" episodes in reverse chronological order, showing the episode number, publication date, and podcast title for each, so that I can quickly find and select the latest or a specific past episode to listen to.
+* **User Story Statement:** As a Busy Tech Executive, I want to view a responsive "Episode List Page" that clearly displays all available "Orchestrator Daily Digest" episodes in reverse chronological order, showing the episode number, publication date, and podcast title for each, so that I can quickly find and select the latest or a specific past episode to listen to.
 * **Acceptance Criteria (ACs):**
     1.  A Next.js page component (e.g., `src/app/page.tsx` or `src/app/episodes/page.tsx`) **must** be created.
     2.  It **must** use the API service layer (Story 3.2) to fetch episodes.
@@ -388,21 +388,21 @@ This section details the Epics and their User Stories for the MVP.
     11. Unit/integration tests (Jest with RTL) **must** cover loading, error, rendering of all details, player presence, and correct link generation. All tests **must** pass.
 
 **Story 3.5: "About" Page Implementation**
-* **User Story Statement:** As a User, I want to access a minimalist, responsive, and consistently styled "About Page" that clearly explains what the "BMad Daily Digest" service is, its core purpose, and how it works at a high level, so that I can quickly understand the value and nature of the service.
+* **User Story Statement:** As a User, I want to access a minimalist, responsive, and consistently styled "About Page" that clearly explains what the "Orchestrator Daily Digest" service is, its core purpose, and how it works at a high level, so that I can quickly understand the value and nature of the service.
 * **Acceptance Criteria (ACs):**
     1.  A Next.js page component (e.g., `src/app/about/page.tsx`) **must** be created.
-    2.  It **must** display static informational content (placeholder text: "BMad Daily Digest provides a daily audio summary of top Hacker News discussions for busy tech professionals, generated using AI.").
-    3.  Content **must** explain: What "BMad Daily Digest" is, its purpose, and a high-level overview of generation.
+    2.  It **must** display static informational content (placeholder text: "Orchestrator Daily Digest provides a daily audio summary of top Hacker News discussions for busy tech professionals, generated using AI.").
+    3.  Content **must** explain: What "Orchestrator Daily Digest" is, its purpose, and a high-level overview of generation.
     4.  Styling **must** adhere to the "80s retro CRT terminal" aesthetic.
     5.  The page **must** be responsive.
     6.  A link to the "About Page" **must** be accessible (e.g., in site navigation/footer, specific location defined by Story 3.1's AI-generated layout).
     7.  Unit tests (Jest with RTL) **must** verify rendering of static content. All tests **must** pass.
 
 **Story 3.6: Frontend Deployment to S3 & CloudFront via CDK**
-* **User Story Statement:** As a Developer, I need the Next.js frontend application to be configured for static export (or an equivalent static-first deployment model) and have its AWS infrastructure (S3 for hosting, CloudFront for CDN and HTTPS) defined and managed via AWS CDK. This setup should automate the deployment of the static site, making the "BMad Daily Digest" web application publicly accessible, performant, and cost-effective.
+* **User Story Statement:** As a Developer, I need the Next.js frontend application to be configured for static export (or an equivalent static-first deployment model) and have its AWS infrastructure (S3 for hosting, CloudFront for CDN and HTTPS) defined and managed via AWS CDK. This setup should automate the deployment of the static site, making the "Orchestrator Daily Digest" web application publicly accessible, performant, and cost-effective.
 * **Acceptance Criteria (ACs):**
     1.  The Next.js application **must** be configured for static export suitable for S3/CloudFront hosting.
-    2.  AWS CDK scripts (managed in the `bmad-daily-digest-backend` repo's CDK app for unified IaC, unless Architect advises a separate frontend CDK app) **must** define the frontend S3 bucket and CloudFront distribution.
+    2.  AWS CDK scripts (managed in the `orchestrator-daily-digest-backend` repo's CDK app for unified IaC, unless Architect advises a separate frontend CDK app) **must** define the frontend S3 bucket and CloudFront distribution.
     3.  CDK stack **must** define: S3 bucket (static web hosting), CloudFront distribution (S3 origin, HTTPS via default CloudFront domain or ACM cert for custom domain if specified, caching behaviors, OAC/OAI).
     4.  A `package.json` build script **must** generate the static output (e.g., to `out/`).
     5.  The CDK deployment process (or related script) **must** include steps to build the Next.js app and sync static files to S3.

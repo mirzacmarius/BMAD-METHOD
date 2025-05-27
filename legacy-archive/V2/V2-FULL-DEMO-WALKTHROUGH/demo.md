@@ -1,4 +1,4 @@
-# Demonstration of the Full BMad Workflow Agent Gem Usage
+# Demonstration of the Full Orchestrator Workflow Agent Gem Usage
 
 **Welcome to the complete end-to-end walkthrough of the Orchestrator Method V2!** This demonstration showcases the power of AI-assisted software development using a phased agent approach. You'll see how each specialized agent (BA, PM, Architect, PO/SM) contributes to the project lifecycle - from initial concept to implementation-ready plans.
 

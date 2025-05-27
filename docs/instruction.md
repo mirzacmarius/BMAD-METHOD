@@ -10,7 +10,7 @@ The Agent Orchestrator in V3 utilizes a build script to package various agent as
 
 ### Overview
 
-The build process is managed by the `build-bmad-orchestrator.js` Node.js script. This script reads its configuration from `build-web-agent.cfg.js`, processes files from an asset directory, and outputs the bundled assets into a designated build directory.
+The build process is managed by the `build-orchestrator-orchestrator.js` Node.js script. This script reads its configuration from `build-web-agent.cfg.js`, processes files from an asset directory, and outputs the bundled assets into a designated build directory.
 
 Quickstart: see [this below](#running-the-build-script)
 
@@ -31,7 +31,7 @@ The build process is configured via `build-web-agent.cfg.js`. Key parameters inc
 - `agent_cfg`: Specifies the path to the md cfg file that defines the agents the Orchestrator can embody.
   - Example: `./orchestrator-agent/web-orchestrator-agent.cfg.md`
 
-Paths in the configuration file (`build-web-agent.cfg.js`) are relative to the `BETA-V3` directory (where `build-web-agent.cfg.js` and the build script `build-bmad-orchestrator.js` are located).
+Paths in the configuration file (`build-web-agent.cfg.js`) are relative to the `BETA-V3` directory (where `build-web-agent.cfg.js` and the build script `build-orchestrator-orchestrator.js` are located).
 
 ### Asset Directory Structure
 
@@ -64,7 +64,7 @@ After running the script, the `build_dir` (e.g., `orchestrator-agent/build/`) wi
 1.  **Bundled Asset Files**: For each subdirectory processed in `asset_root`, a corresponding `.txt` file will be created in `build_dir`. Each file concatenates the content of all files from its source subdirectory.
     - Example: Files from `asset_root/personas/` will be bundled into `build_dir/personas.txt`.
     - Each original file's content within the bundle is demarcated by `==================== START: [base_filename] ====================` and `==================== END: [base_filename] ====================`.
-2.  **`agent-prompt.txt`**: This file is a copy of the bmad orchestrator prompt specified by `orchestrator_agent_prompt` in the configuration.
+2.  **`agent-prompt.txt`**: This file is a copy of the orchestrator orchestrator prompt specified by `orchestrator_agent_prompt` in the configuration.
 3.  **`agent-config.txt**: This is the key file so the orchestrator knows what agents and tasks are configured, and how to find the specific instructions and tasks for the agent in the compiled build assets
 
 These bundled files and the agent prompt are then ready to be used by the Agent Orchestrator.
@@ -75,7 +75,7 @@ The text in agent-prompt.txt gets entered into the window of the main custom web
 
 ### Orchestrator Agent Configuration (e.g., `BETA-V3/orchestrator-agent/web-orchestrator-agent.cfg.md`)
 
-While `build-bmad-orchestrator.js` packages assets, the Orchestrator's core behavior, agent definitions, and personality are defined in a Markdown configuration file. An example is `orchestrator-agent/web-orchestrator-agent.cfg.md` (path relative to `BETA-V3/`, specified in `build-web-agent.cfg.js` via `agent_cfg`). This file is key to the Orchestrator's adaptability.
+While `build-orchestrator-orchestrator.js` packages assets, the Orchestrator's core behavior, agent definitions, and personality are defined in a Markdown configuration file. An example is `orchestrator-agent/web-orchestrator-agent.cfg.md` (path relative to `BETA-V3/`, specified in `build-web-agent.cfg.js` via `agent_cfg`). This file is key to the Orchestrator's adaptability.
 
 **Key Features and Configurability:**
 

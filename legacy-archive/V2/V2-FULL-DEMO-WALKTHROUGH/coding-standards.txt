@@ -1,6 +1,6 @@
-# BMad Hacker Daily Digest Coding Standards and Patterns
+# Orchestrator Hacker Daily Digest Coding Standards and Patterns
 
-This document outlines the coding standards, design patterns, and best practices to be followed during the development of the BMad Hacker Daily Digest project. Adherence to these standards is crucial for maintainability, readability, and collaboration.
+This document outlines the coding standards, design patterns, and best practices to be followed during the development of the Orchestrator Hacker Daily Digest project. Adherence to these standards is crucial for maintainability, readability, and collaboration.
 
 ## Architectural / Design Patterns Adopted
 
@@ -13,7 +13,7 @@ This document outlines the coding standards, design patterns, and best practices
 
 - **Primary Language:** TypeScript (v5.x, as configured in boilerplate)
 - **Primary Runtime:** Node.js (v22.x, as required by PRD )
-- **Style Guide & Linter:** ESLint and Prettier. Configuration is provided by the `bmad-boilerplate`.
+- **Style Guide & Linter:** ESLint and Prettier. Configuration is provided by the `orchestrator-boilerplate`.
   - **Mandatory:** Run `npm run lint` and `npm run format` regularly and before committing code. Code must be free of lint errors.
 - **Naming Conventions:**
   - Variables & Functions: `camelCase`
@@ -71,7 +71,7 @@ This document outlines the coding standards, design patterns, and best practices
   - Do not hardcode secrets anywhere in the source code.
 - **Dependency Security:** Periodically run `npm audit` to check for known vulnerabilities in dependencies. Consider enabling Dependabot if using GitHub.
 - **HTTP Client:** Use the native `Workspace` API as required ; avoid introducing less secure or overly complex HTTP client libraries.
-- **Scraping User-Agent:** Set a default User-Agent header in the scraper code (e.g., "BMadHackerDigest/0.1"). Allow overriding this default via the optional SCRAPER_USER_AGENT environment variable. 
+- **Scraping User-Agent:** Set a default User-Agent header in the scraper code (e.g., "OrchestratorHackerDigest/0.1"). Allow overriding this default via the optional SCRAPER_USER_AGENT environment variable. 
 
 ## Change Log
 

@@ -3,20 +3,20 @@
 
 ## INDEX OF TOPICS
 
-- [Orchestrator Knowledge Base](#bmad-knowledge-base)
+- [Orchestrator Knowledge Base](#orchestrator-knowledge-base)
   - [INDEX OF TOPICS](#index-of-topics)
-  - [BMAD METHOD - CORE PHILOSOPHY](#bmad-method---core-philosophy)
-  - [BMAD METHOD - AGILE METHODOLOGIES OVERVIEW](#bmad-method---agile-methodologies-overview)
+  - [ORCHESTRATOR METHOD - CORE PHILOSOPHY](#orchestrator-method---core-philosophy)
+  - [ORCHESTRATOR METHOD - AGILE METHODOLOGIES OVERVIEW](#orchestrator-method---agile-methodologies-overview)
     - [CORE PRINCIPLES OF AGILE](#core-principles-of-agile)
     - [KEY PRACTICES IN AGILE](#key-practices-in-agile)
     - [BENEFITS OF AGILE](#benefits-of-agile)
-  - [BMAD METHOD - ANALOGIES WITH AGILE PRINCIPLES](#bmad-method---analogies-with-agile-principles)
-  - [BMAD METHOD - TOOLING AND RESOURCE LOCATIONS](#bmad-method---tooling-and-resource-locations)
-  - [BMAD METHOD - COMMUNITY AND CONTRIBUTIONS](#bmad-method---community-and-contributions)
+  - [ORCHESTRATOR METHOD - ANALOGIES WITH AGILE PRINCIPLES](#orchestrator-method---analogies-with-agile-principles)
+  - [ORCHESTRATOR METHOD - TOOLING AND RESOURCE LOCATIONS](#orchestrator-method---tooling-and-resource-locations)
+  - [ORCHESTRATOR METHOD - COMMUNITY AND CONTRIBUTIONS](#orchestrator-method---community-and-contributions)
     - [Licensing](#licensing)
-  - [BMAD METHOD - ETHOS \& BEST PRACTICES](#bmad-method---ethos--best-practices)
+  - [ORCHESTRATOR METHOD - ETHOS \& BEST PRACTICES](#orchestrator-method---ethos--best-practices)
   - [AGENT ROLES AND RESPONSIBILITIES](#agent-roles-and-responsibilities)
-  - [NAVIGATING THE BMAD WORKFLOW - INITIAL GUIDANCE](#navigating-the-bmad-workflow---initial-guidance)
+  - [NAVIGATING THE ORCHESTRATOR WORKFLOW - INITIAL GUIDANCE](#navigating-the-orchestrator-workflow---initial-guidance)
     - [STARTING YOUR PROJECT - ANALYST OR PM?](#starting-your-project---analyst-or-pm)
     - [UNDERSTANDING EPICS - SINGLE OR MULTIPLE?](#understanding-epics---single-or-multiple)
   - [SUGGESTED ORDER OF AGENT ENGAGEMENT (TYPICAL FLOW)](#suggested-order-of-agent-engagement-typical-flow)
@@ -24,12 +24,12 @@
   - [IDE VS UI USAGE - GENERAL RECOMMENDATIONS](#ide-vs-ui-usage---general-recommendations)
     - [CONCEPTUAL AND PLANNING PHASES](#conceptual-and-planning-phases)
     - [TECHNICAL DESIGN, DOCUMENTATION MANAGEMENT \& IMPLEMENTATION PHASES](#technical-design-documentation-management--implementation-phases)
-    - [BMAD METHOD FILES](#bmad-method-files)
+    - [ORCHESTRATOR METHOD FILES](#orchestrator-method-files)
   - [LEVERAGING IDE TASKS FOR EFFICIENCY](#leveraging-ide-tasks-for-efficiency)
     - [PURPOSE OF IDE TASKS](#purpose-of-ide-tasks)
     - [EXAMPLES OF TASK FUNCTIONALITY](#examples-of-task-functionality)
 
-## BMAD METHOD - CORE PHILOSOPHY
+## ORCHESTRATOR METHOD - CORE PHILOSOPHY
 
 **STATEMENT:** "Vibe CEO'ing" is about embracing the chaos, thinking like a CEO with unlimited resources and a singular vision, and leveraging AI as your high-powered team to achieve ambitious goals rapidly. The Orchestrator Method (AI Agent Orchestration Framework for Agile Development), currently in its V3 Release Preview "Bmad Agent", elevates "vibe coding" to advanced project planning, providing a structured yet flexible framework to plan, execute, and manage software projects using a team of specialized AI agents.
 
@@ -39,7 +39,7 @@
 - Utilize AI as a force multiplier.
 - Adapt and overcome obstacles with a proactive mindset.
 
-## BMAD METHOD - AGILE METHODOLOGIES OVERVIEW
+## ORCHESTRATOR METHOD - AGILE METHODOLOGIES OVERVIEW
 
 ### CORE PRINCIPLES OF AGILE
 
@@ -64,7 +64,7 @@
 - Enhanced Stakeholder Engagement: Close collaboration with users/clients.
 - Higher Team Morale: Empowered and self-organizing teams.
 
-## BMAD METHOD - ANALOGIES WITH AGILE PRINCIPLES
+## ORCHESTRATOR METHOD - ANALOGIES WITH AGILE PRINCIPLES
 
 The Orchestrator Method, while distinct in its "Vibe CEO'ing" approach with AI, shares foundational parallels with Agile methodologies:
 
@@ -97,12 +97,12 @@ The Orchestrator Method, while distinct in its "Vibe CEO'ing" approach with AI, 
   - **Agile:** Teams regularly reflect and adjust processes.
   - **BMAD:** The "Vibe CEO" continuously reviews outputs ("QUALITY_CONTROL") and directs "ITERATIVE_REFINEMENT," serving a similar function to feedback loops and process improvement.
 
-## BMAD METHOD - TOOLING AND RESOURCE LOCATIONS
+## ORCHESTRATOR METHOD - TOOLING AND RESOURCE LOCATIONS
 
 Effective use of the Orchestrator Method relies on understanding where key tools, configurations, and informational resources are located and how they are used. The method is designed to be tool-agnostic in principle, with agent instructions and workflows adaptable to various AI platforms and IDEs.
 
 - **Orchestrator Knowledge Base:** This document (`orchestrator-agent/data/orchestrator-kb.md`) serves as the central repository for understanding the Orchestrator method, its principles, agent roles, and workflows.
-- **Orchestrator Agents:** A key feature of V3 is the Orchestrator agent (e.g., "BMAD"), a master agent capable of embodying any specialized agent role.
+- **Orchestrator Agents:** A key feature of V3 is the Orchestrator agent (e.g., "ORCHESTRATOR"), a master agent capable of embodying any specialized agent role.
   - **Web Agent Orchestrator:**
     - **Setup:** Utilizes a Node.js build script (`build-web-agent.js`) configured by `build-web-agent.cfg.js`.
     - **Process:** Consolidates assets (personas, tasks, templates, checklists, data) from an `asset_root` (e.g., `./orchestrator-agent/`) into a `build_dir` (e.g., `./orchestrator-agent/build/`).
@@ -135,7 +135,7 @@ Effective use of the Orchestrator Method relies on understanding where key tools
 - **Templates:** Standardized formats for briefs, PRDs, checklists, etc., likely stored in `orchestrator-agent/templates/`.
 - **Data Directory (`orchestrator-agent/data/`):** Stores persistent data, knowledge bases (like this one), and other key information for the agents.
 
-## BMAD METHOD - COMMUNITY AND CONTRIBUTIONS
+## ORCHESTRATOR METHOD - COMMUNITY AND CONTRIBUTIONS
 
 The Orchestrator Method thrives on community involvement and collaborative improvement.
 
@@ -166,7 +166,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## BMAD METHOD - ETHOS & BEST PRACTICES
+## ORCHESTRATOR METHOD - ETHOS & BEST PRACTICES
 
 - **CORE_ETHOS:** You are the "Vibe CEO." Think like a CEO with unlimited resources and a singular vision. Your AI agents are your high-powered team. Your job is to direct, refine, and ensure quality towards your ambitious goal. The method elevates "vibe coding" to advanced project planning.
 - **MAXIMIZE_AI_LEVERAGE:** Push the AI. Ask for more. Challenge its outputs. Iterate.
@@ -178,7 +178,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - **KNOW_YOUR_AGENTS:** Understand each agent's role (see [AGENT ROLES AND RESPONSIBILITIES](#agent-roles-and-responsibilities) or below). This includes understanding the capabilities of the Orchestrator agent if you are using one.
 - **START_SMALL_SCALE_FAST:** Test concepts, then expand.
 - **EMBRACE_THE_CHAOS:** Pioneering new methods is messy. Adapt and overcome.
-- **ADAPT & EXPERIMENT:** The Orchestrator Method provides a structure, but feel free to adapt its principles, agent order, or templates to fit your specific project needs and working style. Experiment to find what works best for you. **Define agile the BMad way - or your way!** The agent configurations allow for customization of roles and responsibilities.
+- **ADAPT & EXPERIMENT:** The Orchestrator Method provides a structure, but feel free to adapt its principles, agent order, or templates to fit your specific project needs and working style. Experiment to find what works best for you. **Define agile the Orchestrator way - or your way!** The agent configurations allow for customization of roles and responsibilities.
 
 ## AGENT ROLES AND RESPONSIBILITIES
 
@@ -186,7 +186,7 @@ Understanding the distinct roles and responsibilities of each agent is key to ef
 
 - **Orchestrator Agent (BMAD):**
 
-  - **Function:** The primary orchestrator, initially "BMAD." It can embody various specialized agent personas. It handles general BMAD queries, provides oversight, and is the go-to when unsure which specialist is needed.
+  - **Function:** The primary orchestrator, initially "ORCHESTRATOR." It can embody various specialized agent personas. It handles general ORCHESTRATOR queries, provides oversight, and is the go-to when unsure which specialist is needed.
   - **Persona Reference:** `personas#bmad` (Web) or implicitly the core of `ide-orchestrator.md` (IDE).
   - **Key Data/Knowledge:** Accesses `data#orchestrator-kb-data` (Web) for its knowledge base.
   - **Types:**
@@ -244,7 +244,7 @@ Understanding the distinct roles and responsibilities of each agent is key to ef
   - **Configuration:** Specialized agents can be configured in `ide-orchestrator.cfg.md` for the IDE Orchestrator, or defined for the Web Orchestrator. Standalone IDE developer agents (e.g., `dev.ide.md`) are also available.
   - **When to Use:** During the implementation phase, typically working within an IDE.
 
-## NAVIGATING THE BMAD WORKFLOW - INITIAL GUIDANCE
+## NAVIGATING THE ORCHESTRATOR WORKFLOW - INITIAL GUIDANCE
 
 ### STARTING YOUR PROJECT - ANALYST OR PM?
 
@@ -305,9 +305,9 @@ The Orchestrator method can be orchestrated through different interfaces, typica
   - **Developer Agents:** Code implementation for stories, working directly with the codebase in the IDE.
 - **Activities:** Detailed architecture, front-end/back-end design, code development, testing, leveraging IDE tasks (see "LEVERAGING IDE TASKS FOR EFFICIENCY"), using configurations like `ide-orchestrator.cfg.md`.
 
-### BMAD METHOD FILES
+### ORCHESTRATOR METHOD FILES
 
-Understanding key files helps in navigating and customizing the BMAD process:
+Understanding key files helps in navigating and customizing the ORCHESTRATOR process:
 
 - **Knowledge & Configuration:**
   - `orchestrator-agent/data/orchestrator-kb.md`: This central knowledge base.

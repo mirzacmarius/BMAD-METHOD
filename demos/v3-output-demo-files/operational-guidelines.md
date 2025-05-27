@@ -1,8 +1,8 @@
 # Operational Guidelines
 
-## Coding Standards (Backend: `bmad-daily-digest-backend`)
+## Coding Standards (Backend: `orchestrator-daily-digest-backend`)
 
-**Scope:** Applies to `bmad-daily-digest-backend`. Frontend standards are separate.
+**Scope:** Applies to `orchestrator-daily-digest-backend`. Frontend standards are separate.
 
   * **Primary Language:** TypeScript (Node.js 22).
   * **Style:** ESLint, Prettier.

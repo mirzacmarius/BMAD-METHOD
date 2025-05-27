@@ -1,4 +1,4 @@
-# BMad Hacker Daily Digest Environment Variables
+# Orchestrator Hacker Daily Digest Environment Variables
 
 ## Configuration Loading Mechanism
 
@@ -21,14 +21,14 @@ The following table lists the environment variables used by the application. An 
 | `EMAIL_SECURE`                  | Use TLS/SSL (`true` for port 465, `false` for 587/STARTTLS)       | `false`                                  | Yes       | No         | Epic 5        |
 | `EMAIL_USER`                    | Username for SMTP authentication                                  | `user@example.com`                       | Yes       | **Yes**    | Epic 5        |
 | `EMAIL_PASS`                    | Password for SMTP authentication                                  | `your_smtp_password`                     | Yes       | **Yes**    | Epic 5        |
-| `EMAIL_FROM`                    | Sender email address (may need specific format)                   | `"BMad Digest <digest@example.com>"`     | Yes       | No         | Epic 5        |
+| `EMAIL_FROM`                    | Sender email address (may need specific format)                   | `"Orchestrator Digest <digest@example.com>"`     | Yes       | No         | Epic 5        |
 | `EMAIL_RECIPIENTS`              | Comma-separated list of recipient email addresses                 | `recipient1@example.com,r2@test.org`     | Yes       | No         | Epic 5        |
 | `NODE_ENV`                      | Runtime environment (influences some library behavior)            | `development`                            | No        | No         | Standard Node |
 | `SCRAPE_TIMEOUT_MS`             | _Optional:_ Timeout in milliseconds for article scraping requests | `15000` (15s)                            | No        | No         | Good Practice |
 | `OLLAMA_TIMEOUT_MS`             | _Optional:_ Timeout in milliseconds for Ollama API requests       | `120000` (2min)                          | No        | No         | Good Practice |
 | `LOG_LEVEL`                     | _Optional:_ Control log verbosity (e.g., debug, info)             | `info`                                   | No        | No         | Good Practice |
 | `MAX_COMMENT_CHARS_FOR_SUMMARY` | _Optional:_ Max chars of combined comments sent to LLM            | 10000 / null (uses all if not set)       | No        | No         | Arch Decision |
-| `SCRAPER_USER_AGENT`            | _Optional:_ Custom User-Agent header for scraping requests        | "BMadHackerDigest/0.1" (Default in code) | No        | No         | Arch Decision |
+| `SCRAPER_USER_AGENT`            | _Optional:_ Custom User-Agent header for scraping requests        | "OrchestratorHackerDigest/0.1" (Default in code) | No        | No         | Arch Decision |
 
 ## Notes
 

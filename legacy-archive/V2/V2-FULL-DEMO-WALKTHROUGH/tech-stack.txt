@@ -1,4 +1,4 @@
-# BMad Hacker Daily Digest Technology Stack
+# Orchestrator Hacker Daily Digest Technology Stack
 
 ## Technology Choices
 

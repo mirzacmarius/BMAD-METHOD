@@ -1,6 +1,6 @@
-# BMad Daily Digest Documentation
+# Orchestrator Daily Digest Documentation
 
-Welcome to the BMad Daily Digest documentation index. This page provides links to all project documentation.
+Welcome to the Orchestrator Daily Digest documentation index. This page provides links to all project documentation.
 
 ## Project Overview & Requirements
 

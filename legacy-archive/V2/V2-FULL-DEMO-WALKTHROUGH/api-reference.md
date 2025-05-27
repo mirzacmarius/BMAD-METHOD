@@ -1,6 +1,6 @@
-# BMad Hacker Daily Digest API Reference
+# Orchestrator Hacker Daily Digest API Reference
 
-This document describes the external APIs consumed by the BMad Hacker Daily Digest application.
+This document describes the external APIs consumed by the Orchestrator Hacker Daily Digest application.
 
 ## External APIs Consumed
 

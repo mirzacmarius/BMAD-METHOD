@@ -1,8 +1,8 @@
-# BMad Hacker Daily Digest Product Requirements Document (PRD)
+# Orchestrator Hacker Daily Digest Product Requirements Document (PRD)
 
 ## Intro
 
-The BMad Hacker Daily Digest is a command-line tool designed to address the time-consuming nature of reading extensive Hacker News (HN) comment threads. It aims to provide users with a time-efficient way to grasp the collective intelligence and key insights from discussions on top HN stories. The service will fetch the top 10 HN stories daily, retrieve a configurable number of comments for each, attempt to scrape the linked article, generate separate summaries for the article (if scraped) and the comment discussion using a local LLM, and deliver these summaries in a single daily email briefing triggered manually. This project also serves as a practical learning exercise in agent-driven development, TypeScript, Node.js, API integration, and local LLM usage, starting from the provided "bmad-boilerplate" template.
+The Orchestrator Hacker Daily Digest is a command-line tool designed to address the time-consuming nature of reading extensive Hacker News (HN) comment threads. It aims to provide users with a time-efficient way to grasp the collective intelligence and key insights from discussions on top HN stories. The service will fetch the top 10 HN stories daily, retrieve a configurable number of comments for each, attempt to scrape the linked article, generate separate summaries for the article (if scraped) and the comment discussion using a local LLM, and deliver these summaries in a single daily email briefing triggered manually. This project also serves as a practical learning exercise in agent-driven development, TypeScript, Node.js, API integration, and local LLM usage, starting from the provided "orchestrator-boilerplate" template.
 
 ## Goals and Context
 
@@ -13,7 +13,7 @@ The BMad Hacker Daily Digest is a command-line tool designed to address the time
   - Attempt basic scraping of linked article content, handling failures gracefully.
   - Generate distinct Article Summaries (if scraped) and Discussion Summaries using a local LLM (Ollama).
   - Assemble summaries for 10 stories into an HTML email and send via Nodemailer upon manual CLI trigger.
-  - Serve as a learning platform for agent-driven development, TypeScript, Node.js v22, API integration, local LLMs, and configuration management, leveraging the "bmad-boilerplate" structure and tooling.
+  - Serve as a learning platform for agent-driven development, TypeScript, Node.js v22, API integration, local LLMs, and configuration management, leveraging the "orchestrator-boilerplate" structure and tooling.
 - **Measurable Outcomes:**
   - The tool completes its full process (fetch, scrape attempt, summarize, email) without crashing on manual CLI trigger across multiple test runs.
   - The generated email digest consistently contains results for 10 stories, including correct links, discussion summaries, and article summaries where scraping was successful.
@@ -68,7 +68,7 @@ The BMad Hacker Daily Digest is a command-line tool designed to address the time
   - No other specific security requirements for local MVP.
 - **Maintainability:**
   - Code should be well-structured TypeScript.
-  - Adherence to the linting (ESLint) and formatting (Prettier) rules configured in the "bmad-boilerplate" is required. Use `npm run lint` and `npm run format`.
+  - Adherence to the linting (ESLint) and formatting (Prettier) rules configured in the "orchestrator-boilerplate" is required. Use `npm run lint` and `npm run format`.
   - Modularity is desired to potentially swap LLM providers later and facilitate stage testing.
 - **Usability/Accessibility:** N/A (CLI tool for developer).
 - **Other Constraints:**
@@ -105,7 +105,7 @@ The BMad Hacker Daily Digest is a command-line tool designed to address the time
 
 _(Revised proposal)_
 
-- **Epic 1: Project Initialization & Core Setup** - Goal: Initialize the project using "bmad-boilerplate", manage dependencies, setup `.env` and config loading, establish basic CLI entry point, setup basic logging and output directory structure.
+- **Epic 1: Project Initialization & Core Setup** - Goal: Initialize the project using "orchestrator-boilerplate", manage dependencies, setup `.env` and config loading, establish basic CLI entry point, setup basic logging and output directory structure.
 - **Epic 2: HN Data Acquisition & Persistence** - Goal: Implement fetching top 10 stories and their comments (respecting limits) from Algolia HN API, and persist this raw data locally. Implement stage testing utility for fetching.
 - **Epic 3: Article Scraping & Persistence** - Goal: Implement best-effort article scraping/extraction, handle failures gracefully, and persist scraped text locally. Implement stage testing utility for scraping.
 - **Epic 4: LLM Summarization & Persistence** - Goal: Integrate with Ollama to generate article/discussion summaries from persisted data and persist summaries locally. Implement stage testing utility for summarization.
@@ -146,7 +146,7 @@ _(Revised proposal)_
 
 ### Technical Infrastructure
 
-- **Starter Project/Template:** **Mandatory: Use the provided "bmad-boilerplate".** This includes TypeScript setup, Node.js v22 compatibility, Jest, ESLint, Prettier, `ts-node`, `.env` handling via `.env.example`, and standard scripts (`dev`, `build`, `test`, `lint`, `format`).
+- **Starter Project/Template:** **Mandatory: Use the provided "orchestrator-boilerplate".** This includes TypeScript setup, Node.js v22 compatibility, Jest, ESLint, Prettier, `ts-node`, `.env` handling via `.env.example`, and standard scripts (`dev`, `build`, `test`, `lint`, `format`).
 - **Hosting/Cloud Provider:** Local machine execution only for MVP. No cloud deployment.
 - **Frontend Platform:** N/A (CLI tool).
 - **Backend Platform:** Node.js v22 with TypeScript (as provided by the boilerplate). No specific Node.js framework mandated, but structure should support modularity and align with boilerplate setup.
@@ -154,7 +154,7 @@ _(Revised proposal)_
 
 ### Technical Constraints
 
-- Must adhere to the structure and tooling provided by "bmad-boilerplate".
+- Must adhere to the structure and tooling provided by "orchestrator-boilerplate".
 - Must use Node.js v22 native `Workspace` for HTTP requests.
 - Must use the Algolia HN Search API for fetching HN data.
 - Must integrate with a local Ollama instance via a configurable HTTP endpoint. Design should allow potential swapping to other LLM APIs later.

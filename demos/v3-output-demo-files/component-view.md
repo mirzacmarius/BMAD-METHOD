@@ -2,7 +2,7 @@
 
 The system is divided into distinct backend and frontend components.
 
-## Backend Components (`bmad-daily-digest-backend` repository)
+## Backend Components (`orchestrator-daily-digest-backend` repository)
 
 1.  **Daily Workflow Orchestrator (AWS Step Functions state machine):** Manages the end-to-end daily pipeline.
 2.  **HN Data Fetcher Service (AWS Lambda):** Fetches HN posts/comments (Algolia), identifies repeats (via DynamoDB).
@@ -13,7 +13,7 @@ The system is divided into distinct backend and frontend components.
 7.  **Metadata Persistence Service (AWS Lambda & DynamoDB Tables):** Manages episode and HN post processing state metadata in DynamoDB.
 8.  **Backend API Service (AWS API Gateway + AWS Lambda functions):** Exposes endpoints for frontend (episode lists/details).
 
-## Frontend Components (`bmad-daily-digest-frontend` repository)
+## Frontend Components (`orchestrator-daily-digest-frontend` repository)
 
 1.  **Next.js Web Application (Static Site on S3/CloudFront):** Renders UI, handles navigation.
 2.  **Frontend API Client Service (TypeScript module):** Encapsulates communication with the Backend API Service.

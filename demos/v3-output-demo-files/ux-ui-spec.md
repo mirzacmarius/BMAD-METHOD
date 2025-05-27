@@ -1,4 +1,4 @@
-# BMad Daily Digest UI/UX Specification
+# Orchestrator Daily Digest UI/UX Specification
 
 **Version:** 0.1
 **Date:** May 20, 2025
@@ -6,7 +6,7 @@
 
 ## 1\. Introduction
 
-This document defines the user experience (UX) goals, information architecture (IA), user flows, and key visual/interaction specifications for the "BMad Daily Digest" web application's MVP. It builds upon the product vision and requirements outlined in the main PRD and will serve as a direct guide for frontend development. Our core aesthetic is an "80s retro CRT terminal" look and feel.
+This document defines the user experience (UX) goals, information architecture (IA), user flows, and key visual/interaction specifications for the "Orchestrator Daily Digest" web application's MVP. It builds upon the product vision and requirements outlined in the main PRD and will serve as a direct guide for frontend development. Our core aesthetic is an "80s retro CRT terminal" look and feel.
 
   * **Primary Design Files:** For the MVP, detailed visual mockups in separate design files (e.g., Figma) are not planned. The UI design will be directly derived from the specifications within this document, the "User Interaction and Design Goals" section of the PRD, and the established "80s retro CRT terminal" theme using Tailwind CSS and shadcn/ui.
   * **Deployed Storybook / Design System:** A Storybook or formal design system is not an initial deliverable for the MVP. Components will be built and styled directly within the Next.js application using shadcn/ui and Tailwind CSS according to the defined aesthetic. This may evolve post-MVP.
@@ -58,7 +58,7 @@ graph TD
 
   * **Home / Episode List Page (`/` or `/episodes`):** The main landing page, displaying a reverse chronological list of daily podcast episodes.
   * **Episode Detail Page (`/episodes/{episodeId}`):** Displays the selected podcast episode, including the audio player, and links to source articles and Hacker News discussions.
-  * **About Page (`/about`):** Provides information about the "BMad Daily Digest" service.
+  * **About Page (`/about`):** Provides information about the "Orchestrator Daily Digest" service.
 
 **b. Navigation Structure (MVP):**
 
@@ -67,7 +67,7 @@ graph TD
       * This navigation **must** include clear links to:
           * "Home" (or "Episodes" leading to the Episode List Page).
           * "About" (leading to the About Page).
-      * The site title/logo (e.g., "BMad Daily Digest") in the header **should** also link to the Home/Episode List Page.
+      * The site title/logo (e.g., "Orchestrator Daily Digest") in the header **should** also link to the Home/Episode List Page.
   * **Content-Specific Navigation:**
       * On the **Episode List Page**, each listed episode **must** function as a direct link to its respective **Episode Detail Page**.
       * The **Episode Detail Page** will contain external links to source articles and Hacker News discussions, which **must** open in new browser tabs.
@@ -75,7 +75,7 @@ graph TD
 
 ## 4\. User Flows
 
-This section details the primary paths users will take to interact with the "BMad Daily Digest" MVP.
+This section details the primary paths users will take to interact with the "Orchestrator Daily Digest" MVP.
 
 ### a. User Flow 1: Consuming the Latest Digest
 
@@ -113,7 +113,7 @@ This section details the primary paths users will take to interact with the "BMa
 
 ### c. User Flow 3: Learning About the Service
 
-  * **Goal:** The user wants to understand what "BMad Daily Digest" is.
+  * **Goal:** The user wants to understand what "Orchestrator Daily Digest" is.
 
   * **Steps / Diagram:**
 
@@ -140,7 +140,7 @@ This section provides high-level conceptual descriptions of the key screen layou
 
 **1. Home / Episode List Page (`/` or `/episodes`)**
 \* **Header:**
-\* Site Title/Logo (e.g., "BMad Daily Digest" styled in the retro theme). Clicking this navigates to this page.
+\* Site Title/Logo (e.g., "Orchestrator Daily Digest" styled in the retro theme). Clicking this navigates to this page.
 \* Navigation Links: "Episodes" (if not the home page itself), "About."
 \* **Main Content Area:**
 \* A clear heading like "Latest Digests" or "Episodes."
@@ -170,13 +170,13 @@ This section provides high-level conceptual descriptions of the key screen layou
 **3. About Page (`/about`)**
 \* **Header:** Consistent with other pages.
 \* **Main Content Area:**
-\* A clear heading like "About BMad Daily Digest."
-\* Static text content (Placeholder: "BMad Daily Digest provides a daily audio summary of top Hacker News discussions for busy tech professionals, generated using AI.") explaining the service, its purpose, and a high-level overview of how it's generated. The text itself should be styled in the retro theme.
+\* A clear heading like "About Orchestrator Daily Digest."
+\* Static text content (Placeholder: "Orchestrator Daily Digest provides a daily audio summary of top Hacker News discussions for busy tech professionals, generated using AI.") explaining the service, its purpose, and a high-level overview of how it's generated. The text itself should be styled in the retro theme.
 \* **Footer (Optional):** Consistent with other pages.
 
 ## 6\. Component Library / Design System Reference
 
-For the "BMad Daily Digest" MVP, we will proceed as follows:
+For the "Orchestrator Daily Digest" MVP, we will proceed as follows:
 
   * **Foundation:** We will **not** be using a pre-existing external, comprehensive design system. Instead, we will be creating a unique, project-specific set of themed UI components.
   * **Core Technologies:**

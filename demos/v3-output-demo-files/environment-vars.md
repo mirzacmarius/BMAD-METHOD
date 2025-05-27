@@ -1,6 +1,6 @@
 # Environment Variables Documentation
 
-The BMad Daily Digest application uses various environment variables for configuration settings. These variables are referenced throughout the architecture document, particularly in the sections about API interactions with external services.
+The Orchestrator Daily Digest application uses various environment variables for configuration settings. These variables are referenced throughout the architecture document, particularly in the sections about API interactions with external services.
 
 ## Backend Environment Variables
 

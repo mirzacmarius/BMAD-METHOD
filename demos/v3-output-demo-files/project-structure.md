@@ -2,11 +2,11 @@
 
 The project utilizes a polyrepo structure with separate backend and frontend repositories, each with its own CDK application.
 
-## 1. Backend Repository (`bmad-daily-digest-backend`)
+## 1. Backend Repository (`orchestrator-daily-digest-backend`)
 Organized by features within `src/`, using `dash-case` for folders and files (e.g., `src/features/content-ingestion/hn-fetcher-service.ts`).
 
 ```plaintext
-bmad-daily-digest-backend/
+orchestrator-daily-digest-backend/
 ├── .github/
 ├── cdk/
 │   ├── bin/
@@ -30,11 +30,11 @@ bmad-daily-digest-backend/
 
 *Key Directories: `cdk/` for IaC, `src/features/` for modular backend logic, `src/shared/` for reusable code, `tests/` for Jest tests.*
 
-## 2. Frontend Repository (`bmad-daily-digest-frontend`)
+## 2. Frontend Repository (`orchestrator-daily-digest-frontend`)
 Aligns with V0.dev generated Next.js App Router structure, using `dash-case` for custom files/folders where applicable.
 
 ```plaintext
-bmad-daily-digest-frontend/
+orchestrator-daily-digest-frontend/
 ├── .github/
 ├── app/
 │   ├── (pages)/

@@ -57,7 +57,7 @@ This task provides instructions for validating documentation against checklists.
 
 ## Context
 
-The BMAD Method uses various checklists to ensure quality and completeness of different artifacts. The mapping between checklists and their required documents is defined in `checklist-mappings`. This allows for easy addition of new checklists without modifying this task.
+The Orchestrator Method uses various checklists to ensure quality and completeness of different artifacts. The mapping between checklists and their required documents is defined in `checklist-mappings`. This allows for easy addition of new checklists without modifying this task.
 
 ## Instructions
 
@@ -772,8 +772,8 @@ To identify the next logical story based on project progress and epic definition
   - Data Models Document (as referenced in Index Doc)
   - API Reference Document (as referenced in Index Doc)
   - UI/UX Specifications, Style Guides, Component Guides (if relevant, as referenced in Index Doc)
-- The `bmad-agent/templates/story-tmpl.md` (hereafter "Story Template")
-- The `bmad-agent/checklists/story-draft-checklist.md` (hereafter "Story Draft Checklist")
+- The `orchestrator-agent/templates/story-tmpl.md` (hereafter "Story Template")
+- The `orchestrator-agent/checklists/story-draft-checklist.md` (hereafter "Story Draft Checklist")
 - User confirmation to proceed with story identification and, if needed, to override warnings about incomplete prerequisite stories.
 
 ## Task Execution Instructions
@@ -1203,7 +1203,7 @@ Transform large project documents into smaller, granular files within the `docs/
 1. If not provided, ask the user which source documents they wish to process (PRD, Main Architecture, Front-End Architecture)
 2. Validate prerequisites:
 
-   - Provided `doc-sharding-tmpl.txt` or access to `bmad-agent/doc-sharding-tmpl.txt`
+   - Provided `doc-sharding-tmpl.txt` or access to `orchestrator-agent/doc-sharding-tmpl.txt`
    - Location of source documents to process
    - Write access to the `docs/` directory
    - Output method (file system or chat interface)

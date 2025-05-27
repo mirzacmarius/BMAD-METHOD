@@ -1,4 +1,4 @@
-A simple project run through the Web Gemini BMad Agent - all artifacts from a single chat session (split up into smaller files with the sharding task)
+A simple project run through the Web Gemini Orchestrator Agent - all artifacts from a single chat session (split up into smaller files with the sharding task)
 
 - The [Project Brief](./v3-output-demo-files/project-brief.md) was first collaborated on and created with the Analyst
 - The first [PRD Draft](./v3-output-demo-files/prd.draft.md) was created with the PM

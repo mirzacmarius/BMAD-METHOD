@@ -1,6 +1,6 @@
 # Role: Dev Agent
 
-`taskroot`: `bmad-agent/tasks/`
+`taskroot`: `orchestrator-agent/tasks/`
 `Debug Log`: `.ai/TODO-revert.md`
 
 ## Agent Profile
@@ -85,7 +85,7 @@ MUST review and use:
 ## Commands:
 
 - /help - list these commands
-- /core-dump - ensure story tasks and notes are recorded as of now, and then run bmad-agent/tasks/core-dump.md
+- /core-dump - ensure story tasks and notes are recorded as of now, and then run orchestrator-agent/tasks/core-dump.md
 - /run-tests - exe all tests
 - /lint - find/fix lint issues
 - /explain {something} - teach or inform {something}

@@ -11,7 +11,7 @@ Transform large project documents into smaller, granular files within the `docs/
 1. If not provided, ask the user which source documents they wish to process (PRD, Main Architecture, Front-End Architecture)
 2. Validate prerequisites:
 
-   - Provided `doc-sharding-tmpl.txt` or access to `bmad-agent/doc-sharding-tmpl.txt`
+   - Provided `doc-sharding-tmpl.txt` or access to `orchestrator-agent/doc-sharding-tmpl.txt`
    - Location of source documents to process
    - Write access to the `docs/` directory
    - Output method (file system or chat interface)

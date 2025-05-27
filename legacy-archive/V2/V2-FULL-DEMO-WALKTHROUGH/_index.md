@@ -2,13 +2,13 @@
 
 ## Overview
 
-This index catalogs all documentation files for the BMAD-METHOD project, organized by category for easy reference and AI discoverability.
+This index catalogs all documentation files for the ORCHESTRATOR-METHOD project, organized by category for easy reference and AI discoverability.
 
 ## Product Documentation
 
 - **[prd.md](prd.md)** - Product Requirements Document outlining the core project scope, features and business objectives.
 - **[final-brief-with-pm-prompt.md](final-brief-with-pm-prompt.md)** - Finalized project brief with Product Management specifications.
-- **[demo.md](demo.md)** - Main demonstration guide for the BMAD-METHOD project.
+- **[demo.md](demo.md)** - Main demonstration guide for the ORCHESTRATOR-METHOD project.
 
 ## Architecture & Technical Design
 

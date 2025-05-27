@@ -1,6 +1,6 @@
 # IDE Instructions for Agent Configuration
 
-The Uber Orchestrating BMad Agent is mainly recommended for use in Gemini Web, especially for working on the brief, PRD, high level Epics, Stories, Web Deign and Prompt Output. BUT - Everything can also be done in the IDE if desired, see the BMad Agent setup section below.
+The Uber Orchestrating Orchestrator Agent is mainly recommended for use in Gemini Web, especially for working on the brief, PRD, high level Epics, Stories, Web Deign and Prompt Output. BUT - Everything can also be done in the IDE if desired, see the Orchestrator Agent setup section below.
 
 ## Single Agent
 
@@ -10,9 +10,9 @@ Create a custom mode following the docs, and paste in any of the agents that end
 
 As cursor currently limits the total number of allowed custom modes - you can utilize tasks to handle 1 off actions you might want an agent to perform. Just drag the task into any agent chat window and ask the agent to complete the task.
 
-## BMad Agent
+## Orchestrator Agent
 
-The BMad Agent requires the full bmad agent folder to be at the root of your project. Set up of the orchestrator simply requires copy of the markdown content of ide-bmad-orchestrator.md the same way you would do the Single Agent.
+The Orchestrator Agent requires the full bmad agent folder to be at the root of your project. Set up of the orchestrator simply requires copy of the markdown content of ide-orchestrator.md the same way you would do the Single Agent.
 
 ## Setting Up Custom Modes in Cursor
 
@@ -44,8 +44,8 @@ NOTE from Cursor: "We’re considering adding a .cursor/modes.json file to your 
    - The Windsurf Editor is designed for AI agents that can tackle complex tasks independently
    - Use Model Context Protocol (MCP) to extend agent capabilities
 
-4. **BMAD Method Implementation**:
-   - Create custom agents for each role in the BMAD workflow
+4. **Orchestrator Method Implementation**:
+   - Create custom agents for each role in the Orchestrator workflow
    - Configure each agent with appropriate permissions and capabilities
    - Utilize Windsurf's agentic features to maintain workflow continuity
 
@@ -58,7 +58,7 @@ NOTE from Cursor: "We’re considering adding a .cursor/modes.json file to your 
    - Create tailored AI behaviors through configuration files
    - Each custom mode can have specific prompts, file restrictions, and auto-approval settings
 
-2. **Creating BMAD Method Agents**:
+2. **Creating Orchestrator Method Agents**:
 
    - Create distinct modes for each BMAD role (Analyst, PM, Architect, PO/SM, Dev, Documentation, etc...)
    - Customize each mode with tailored prompts specific to their role
@@ -89,9 +89,9 @@ NOTE from Cursor: "We’re considering adding a .cursor/modes.json file to your 
    - Ask Cline to "add a tool" and it will create a new MCP server tailored to your specific workflow
    - Custom tools are saved locally at ~/Documents/Cline/MCP, making them easy to share with your team
 
-3. **BMAD Method Implementation**:
+3. **Orchestrator Method Implementation**:
 
-   - Create custom tools for each role in the BMAD workflow
+   - Create custom tools for each role in the Orchestrator workflow
    - Configure behavioral guidelines specific to each role
    - Utilize Cline's autonomous abilities to handle the entire workflow
 

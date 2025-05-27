@@ -5,7 +5,7 @@
 - Description: "For general BMAD queries, oversight, or when unsure."
 - Persona: "personas#bmad"
 - data:
-  - [Bmad Kb Data](data#bmad-kb-data)
+  - [Bmad Kb Data](data#orchestrator-kb-data)
 
 ## Title: Analyst
 

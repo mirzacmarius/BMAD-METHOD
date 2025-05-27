@@ -22,14 +22,14 @@ Quickstart: see [this below](#running-the-build-script)
 
 The build process is configured via `build-web-agent.cfg.js`. Key parameters include:
 
-- `orchestrator_agent_prompt`: Specifies the path to the main prompt file for the orchestrator agent, such as `bmad-agent/web-bmad-orchestrator-agent.md`. This file will be copied to `agent-prompt.txt` in the build directory.
-  - Example: `./bmad-agent/web-bmad-orchestrator-agent.md`
+- `orchestrator_agent_prompt`: Specifies the path to the main prompt file for the orchestrator agent, such as `orchestrator-agent/web-orchestrator-agent.md`. This file will be copied to `agent-prompt.txt` in the build directory.
+  - Example: `./orchestrator-agent/web-orchestrator-agent.md`
 - `asset_root`: Defines the root directory where your agent assets are stored. The script will look for subdirectories within this path.
-  - Example: `./bmad-agent/` meaning it will look for folders like `personas`, `tasks` inside `bmad-agent/`)
+  - Example: `./orchestrator-agent/` meaning it will look for folders like `personas`, `tasks` inside `orchestrator-agent/`)
 - `build_dir`: Specifies the directory where the bundled output files and the `agent-prompt.txt` will be created.
-  - Example: `./bmad-agent/build/`
+  - Example: `./orchestrator-agent/build/`
 - `agent_cfg`: Specifies the path to the md cfg file that defines the agents the Orchestrator can embody.
-  - Example: `./bmad-agent/web-bmad-orchestrator-agent.cfg.md`
+  - Example: `./orchestrator-agent/web-orchestrator-agent.cfg.md`
 
 Paths in the configuration file (`build-web-agent.cfg.js`) are relative to the `BETA-V3` directory (where `build-web-agent.cfg.js` and the build script `build-bmad-orchestrator.js` are located).
 
@@ -37,7 +37,7 @@ Paths in the configuration file (`build-web-agent.cfg.js`) are relative to the `
 
 The script expects a specific structure within the `asset_root` directory:
 
-1.  **Subdirectories**: Create subdirectories directly under `asset_root` for each category of assets. Based on the `bmad-agent/` folder, these would be:
+1.  **Subdirectories**: Create subdirectories directly under `asset_root` for each category of assets. Based on the `orchestrator-agent/` folder, these would be:
     - `checklists/`
     - `data/`
     - `personas/`
@@ -59,7 +59,7 @@ The script will log its progress, including discovered source directories, any i
 
 ### Output
 
-After running the script, the `build_dir` (e.g., `bmad-agent/build/`) will contain:
+After running the script, the `build_dir` (e.g., `orchestrator-agent/build/`) will contain:
 
 1.  **Bundled Asset Files**: For each subdirectory processed in `asset_root`, a corresponding `.txt` file will be created in `build_dir`. Each file concatenates the content of all files from its source subdirectory.
     - Example: Files from `asset_root/personas/` will be bundled into `build_dir/personas.txt`.
@@ -73,9 +73,9 @@ These bundled files and the agent prompt are then ready to be used by the Agent 
 
 The text in agent-prompt.txt gets entered into the window of the main custom web agent instruction set. The other files in the build folder all need to be attached as files for the Gem or GPT.
 
-### Orchestrator Agent Configuration (e.g., `BETA-V3/bmad-agent/web-bmad-orchestrator-agent.cfg.md`)
+### Orchestrator Agent Configuration (e.g., `BETA-V3/orchestrator-agent/web-orchestrator-agent.cfg.md`)
 
-While `build-bmad-orchestrator.js` packages assets, the Orchestrator's core behavior, agent definitions, and personality are defined in a Markdown configuration file. An example is `bmad-agent/web-bmad-orchestrator-agent.cfg.md` (path relative to `BETA-V3/`, specified in `build-web-agent.cfg.js` via `agent_cfg`). This file is key to the Orchestrator's adaptability.
+While `build-bmad-orchestrator.js` packages assets, the Orchestrator's core behavior, agent definitions, and personality are defined in a Markdown configuration file. An example is `orchestrator-agent/web-orchestrator-agent.cfg.md` (path relative to `BETA-V3/`, specified in `build-web-agent.cfg.js` via `agent_cfg`). This file is key to the Orchestrator's adaptability.
 
 **Key Features and Configurability:**
 
@@ -84,7 +84,7 @@ While `build-bmad-orchestrator.js` packages assets, the Orchestrator's core beha
   - `Name`: (e.g., `- Name: John`) - The agent's specific name.
   - `Description`: (e.g., `- Description: "Details..."`) - A brief of the agent's purpose.
   - `Persona`: (e.g., `- Persona: "personas#pm"`) - A reference (e.g., to `pm` section in `personas.txt`) defining core personality and instructions.
-  - `Customize`: (e.g., `- Customize: "Behavior details..."`) - For specific personality traits or overrides. This field's content takes precedence over the base `Persona` if conflicts arise, as detailed in `bmad-agent/web-bmad-orchestrator-agent.md`.
+  - `Customize`: (e.g., `- Customize: "Behavior details..."`) - For specific personality traits or overrides. This field's content takes precedence over the base `Persona` if conflicts arise, as detailed in `orchestrator-agent/web-orchestrator-agent.md`.
 
   `checklists`, `templates`, `data`, `tasks`: These keys introduce lists of resources the agent will have access to. Each item is a Markdown link under the respective key, for example:
   For `checklists`:
@@ -113,7 +113,7 @@ While `build-bmad-orchestrator.js` packages assets, the Orchestrator's core beha
 
 **How it Works (Conceptual Flow from `orchestrator-agent.md`):**
 
-1.  The Orchestrator (initially BMad) loads and parses the Markdown agent configuration file (e.g., `web-bmad-orchestrator-agent.cfg.md`).
+1.  The Orchestrator (initially BMad) loads and parses the Markdown agent configuration file (e.g., `web-orchestrator-agent.cfg.md`).
 2.  When a user request matches an agent's `title`, `name`, `description`, or `classification_label`, the Orchestrator identifies the target agent.
 3.  It then loads the agent's `persona` and any associated `templates`, `checklists`, `data_sources`, and `tasks` by:
     - Identifying the correct bundled `.txt` file (e.g., `personas.txt` for `personas#pm`).
@@ -121,7 +121,7 @@ While `build-bmad-orchestrator.js` packages assets, the Orchestrator's core beha
 4.  The `Customize` instructions from the Markdown configuration are applied, potentially modifying the agent's behavior.
 5.  The Orchestrator then _becomes_ that agent, adopting its complete persona, knowledge, and operational parameters defined in the Markdown configuration and the loaded asset sections.
 
-This system makes the Agent Orchestrator highly adaptable. You can easily define new agents, modify existing ones, tweak personalities with the `Customize` field (in the Markdown agent configuration file like `web-bmad-orchestrator-agent.cfg.md`), or change their knowledge base, main prompt, and asset paths (in `build-web-agent.cfg.js` and the corresponding asset files), then re-running the build script if asset content was changed.
+This system makes the Agent Orchestrator highly adaptable. You can easily define new agents, modify existing ones, tweak personalities with the `Customize` field (in the Markdown agent configuration file like `web-orchestrator-agent.cfg.md`), or change their knowledge base, main prompt, and asset paths (in `build-web-agent.cfg.js` and the corresponding asset files), then re-running the build script if asset content was changed.
 
 ## IDE Agent Setup and Usage
 
@@ -131,14 +131,14 @@ The IDE Agents in V3 are designed for optimal performance within IDE environment
 
 You can use specialized standalone IDE agents, such as the `sm.ide.md` (Scrum Master) and `dev.ide.md` (Developer), for specific roles like story generation or development tasks. These, or any general IDE agent, can also directly reference and execute tasks by providing the agent with the task definition from your `docs/tasks/` folder.
 
-### IDE Agent Orchestrator (`ide-bmad-orchestrator.md`)
+### IDE Agent Orchestrator (`ide-orchestrator.md`)
 
-A powerful alternative is the `ide-bmad-orchestrator.md`. This agent provides the flexibility of the web orchestrator—allowing a single IDE agent to embody multiple personas—but **without requiring any build step.** It dynamically loads its configuration and all associated resources.
+A powerful alternative is the `ide-orchestrator.md`. This agent provides the flexibility of the web orchestrator—allowing a single IDE agent to embody multiple personas—but **without requiring any build step.** It dynamically loads its configuration and all associated resources.
 
 #### How the IDE Orchestrator Works
 
-1.  **Configuration (`ide-bmad-orchestrator.cfg.md`):**
-    The orchestrator's behavior is primarily driven by a Markdown configuration file (e.g., `BETA-V3/bmad-agent/ide-bmad-orchestrator.cfg.md`, the path to which is specified within the `ide-bmad-orchestrator.md` itself). This config file has two main parts:
+1.  **Configuration (`ide-orchestrator.cfg.md`):**
+    The orchestrator's behavior is primarily driven by a Markdown configuration file (e.g., `BETA-V3/orchestrator-agent/ide-orchestrator.cfg.md`, the path to which is specified within the `ide-orchestrator.md` itself). This config file has two main parts:
 
     - **Data Resolution:**
       Located at the top of the config file, this section defines key-value pairs for base paths. These paths tell the orchestrator where to find different types of asset files (personas, tasks, checklists, templates, data).
@@ -148,7 +148,7 @@ A powerful alternative is the `ide-bmad-orchestrator.md`. This agent provides th
 
       ## Data Resolution
 
-      agent-root: (project-root)/BETA-V3/bmad-agent
+      agent-root: (project-root)/BETA-V3/orchestrator-agent
       checklists: (agent-root)/checklists
       data: (agent-root)/data
       personas: (agent-root)/personas
@@ -185,8 +185,8 @@ A powerful alternative is the `ide-bmad-orchestrator.md`. This agent provides th
           - [Create Next Story](create-next-story-task.md)
         ```
 
-2.  **Operational Workflow (inside `ide-bmad-orchestrator.md`):**
-    - **Initialization:** Upon activation in your IDE, the `ide-bmad-orchestrator.md` first loads and parses its specified configuration file (`ide-bmad-orchestrator.cfg.md`). If this fails, it will inform you and halt.
+2.  **Operational Workflow (inside `ide-orchestrator.md`):**
+    - **Initialization:** Upon activation in your IDE, the `ide-orchestrator.md` first loads and parses its specified configuration file (`ide-orchestrator.cfg.md`). If this fails, it will inform you and halt.
     - **Greeting & Persona Listing:** It will greet you. If your initial instruction isn't clear or if you ask, it will list the available specialist personas (by `Title`, `Name`, and `Description`) and the `Tasks` each can perform, all derived from the loaded configuration.
     - **Persona Activation:** When you request a specific persona (e.g., "Become the Analyst" or "I need Larry to help with research"), the orchestrator:
       - Finds the persona in its configuration.
@@ -201,15 +201,15 @@ A powerful alternative is the `ide-bmad-orchestrator.md`. This agent provides th
 
 #### Usage Instructions for IDE Orchestrator
 
-1.  **Set up your configuration (`ide-bmad-orchestrator.cfg.md`):**
-    - Ensure you have an `ide-bmad-orchestrator.cfg.md` file. You can use the one located in `BETA-V3/bmad-agent/` as a template or starting point.
+1.  **Set up your configuration (`ide-orchestrator.cfg.md`):**
+    - Ensure you have an `ide-orchestrator.cfg.md` file. You can use the one located in `BETA-V3/orchestrator-agent/` as a template or starting point.
     - Verify that the `Data Resolution` paths at the top correctly point to your asset folders (personas, tasks, templates, checklists, data) relative to your project structure.
     - Define your desired agents with their `Title`, `Name`, `Customize` instructions, `Persona` file, and `Tasks`. Ensure the referenced persona and task files exist in the locations specified by your `Data Resolution` paths.
 2.  **Set up your persona and task files:**
     - Create the Markdown files for each persona (e.g., `analyst.md`, `po.md`) in your `personas` directory.
     - Create the Markdown files for each task (e.g., `create-prd.md`) in your `tasks` directory.
 3.  **Activate the Orchestrator:**
-    - In your IDE (e.g., Cursor), select the `ide-bmad-orchestrator.md` file/agent as your active AI assistant.
+    - In your IDE (e.g., Cursor), select the `ide-orchestrator.md` file/agent as your active AI assistant.
 4.  **Interact with the Orchestrator:**
     - **Initial Interaction:**
       - The orchestrator will greet you and confirm it has loaded its configuration.
@@ -222,7 +222,7 @@ A powerful alternative is the `ide-bmad-orchestrator.md`. This agent provides th
     - **Switching Personas:**
       - If you need to switch: "I need to talk to the Architect now."
       - The orchestrator will advise a new chat. If you want to switch in the current chat, you'll need to give an explicit override command when prompted (e.g., "Override safety protocol and switch to Architect").
-    - **Follow Persona Instructions:** Once a persona is active, it will guide you based on its definition and the task it's performing. Remember that resource files like templates or checklists referenced by a task will be resolved using the global `Data Resolution` paths in the `ide-bmad-orchestrator.cfg.md`.
+    - **Follow Persona Instructions:** Once a persona is active, it will guide you based on its definition and the task it's performing. Remember that resource files like templates or checklists referenced by a task will be resolved using the global `Data Resolution` paths in the `ide-orchestrator.cfg.md`.
 
 This setup allows for a highly flexible and dynamically configured multi-persona agent directly within your IDE, streamlining various development and project management workflows.
 

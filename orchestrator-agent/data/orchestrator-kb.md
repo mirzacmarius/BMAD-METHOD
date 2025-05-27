@@ -1,9 +1,8 @@
-==================== START: orchestrator-kb ====================
 # Orchestrator Knowledge Base
 
 ## INDEX OF TOPICS
 
-- [Orchestrator Knowledge Base](#bmad-knowledge-base)
+- [Orchestrator Knowledge Base](#orchestrator-knowledge-base)
   - [INDEX OF TOPICS](#index-of-topics)
   - [BMAD METHOD - CORE PHILOSOPHY](#bmad-method---core-philosophy)
   - [BMAD METHOD - AGILE METHODOLOGIES OVERVIEW](#bmad-method---agile-methodologies-overview)
@@ -29,7 +28,7 @@
     - [PURPOSE OF IDE TASKS](#purpose-of-ide-tasks)
     - [EXAMPLES OF TASK FUNCTIONALITY](#examples-of-task-functionality)
 
-## BMAD METHOD - CORE PHILOSOPHY
+## ORCHESTRATOR METHOD - CORE PHILOSOPHY
 
 **STATEMENT:** "Vibe CEO'ing" is about embracing the chaos, thinking like a CEO with unlimited resources and a singular vision, and leveraging AI as your high-powered team to achieve ambitious goals rapidly. The Orchestrator Method (AI Agent Orchestration Framework for Agile Development), currently in its V3 Release Preview "Bmad Agent", elevates "vibe coding" to advanced project planning, providing a structured yet flexible framework to plan, execute, and manage software projects using a team of specialized AI agents.
 
@@ -354,18 +353,3 @@ Here are some examples of functionalities provided by tasks found in `orchestrat
 - **`create-deep-research-prompt.md`:** Helps formulate prompts for conducting in-depth research on a topic.
 
 These tasks allow agents to perform complex, multi-step operations by following the detailed instructions within each task file, often leveraging templates and checklists as needed.
-
-==================== END: orchestrator-kb ====================
-
-
-==================== START: technical-preferences ====================
-# User-Defined Preferred Patterns and Preferences
-
-See example files in this folder.
-list out your technical preferences, patterns you like to follow, language framework or starter project preferences. 
-
-Anything you learn or prefer over time to drive future project choices, add the here.
-
-==================== END: technical-preferences ====================
-
-

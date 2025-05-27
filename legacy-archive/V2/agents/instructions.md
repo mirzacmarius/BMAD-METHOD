@@ -1,6 +1,6 @@
 # IDE Instructions for Agent Configuration
 
-This document provides ideas and some initial guidance on how to set up custom agent modes in various integrated development environments (IDEs) to implement the BMAD Method workflow. Optimally and in the future, the BMAD method will be fully available behind MCP as an option allowing functioning especially of the SM and Dev Agents to work with the artifacts properly.
+This document provides ideas and some initial guidance on how to set up custom agent modes in various integrated development environments (IDEs) to implement the Orchestrator Method workflow. Optimally and in the future, the Orchestrator method will be fully available behind MCP as an option allowing functioning especially of the SM and Dev Agents to work with the artifacts properly.
 
 The alternative for all of this is if not using custom agents, this whole system can be modified to a system of rules, which at the end of the day are really very similar to custom mode instructions
 
@@ -19,7 +19,7 @@ The alternative for all of this is if not using custom agents, this whole system
    - Cursor allows creating custom agents through a GUI interface
    - See [Cursor Custom Modes doc](https://docs.cursor.com/chat/custom-modes#custom-modes)
 
-3. **Configuring BMAD Method Agents**:
+3. **Configuring Orchestrator Method Agents**:
 
    - Define specific roles for each agent in your workflow (Analyst, PM, Architect, PO/SM, etc.)
    - Specify what tools each agent can use (both Cursor-native and MCP)
@@ -47,8 +47,8 @@ The alternative for all of this is if not using custom agents, this whole system
    - The Windsurf Editor is designed for AI agents that can tackle complex tasks independently
    - Use Model Context Protocol (MCP) to extend agent capabilities
 
-4. **BMAD Method Implementation**:
-   - Create custom agents for each role in the BMAD workflow
+4. **Orchestrator Method Implementation**:
+   - Create custom agents for each role in the Orchestrator workflow
    - Configure each agent with appropriate permissions and capabilities
    - Utilize Windsurf's agentic features to maintain workflow continuity
 
@@ -61,7 +61,7 @@ The alternative for all of this is if not using custom agents, this whole system
    - Create tailored AI behaviors through configuration files
    - Each custom mode can have specific prompts, file restrictions, and auto-approval settings
 
-2. **Creating BMAD Method Agents**:
+2. **Creating Orchestrator Method Agents**:
 
    - Create distinct modes for each BMAD role (Analyst, PM, Architect, PO/SM, Dev, Documentation, etc...)
    - Customize each mode with tailored prompts specific to their role
@@ -92,9 +92,9 @@ The alternative for all of this is if not using custom agents, this whole system
    - Ask Cline to "add a tool" and it will create a new MCP server tailored to your specific workflow
    - Custom tools are saved locally at ~/Documents/Cline/MCP, making them easy to share with your team
 
-3. **BMAD Method Implementation**:
+3. **Orchestrator Method Implementation**:
 
-   - Create custom tools for each role in the BMAD workflow
+   - Create custom tools for each role in the Orchestrator workflow
    - Configure behavioral guidelines specific to each role
    - Utilize Cline's autonomous abilities to handle the entire workflow
 

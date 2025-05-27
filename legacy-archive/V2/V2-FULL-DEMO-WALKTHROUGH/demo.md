@@ -1,6 +1,6 @@
 # Demonstration of the Full BMad Workflow Agent Gem Usage
 
-**Welcome to the complete end-to-end walkthrough of the BMad Method V2!** This demonstration showcases the power of AI-assisted software development using a phased agent approach. You'll see how each specialized agent (BA, PM, Architect, PO/SM) contributes to the project lifecycle - from initial concept to implementation-ready plans.
+**Welcome to the complete end-to-end walkthrough of the Orchestrator Method V2!** This demonstration showcases the power of AI-assisted software development using a phased agent approach. You'll see how each specialized agent (BA, PM, Architect, PO/SM) contributes to the project lifecycle - from initial concept to implementation-ready plans.
 
 Each section includes links to **full Gemini interaction transcripts**, allowing you to witness the remarkable collaborative process between human and AI. The demo folder contains all output artifacts that flow between agents, creating a cohesive development pipeline.
 
@@ -34,7 +34,7 @@ The PM did a great job of asking the right questions, and producing the [Draft P
 
 The beauty of these new V2 Agents is they pause for you to answer questions or review the document generation section by section - this is so much better than receiving a massive document dump all at once and trying to take it all in. in between each piece you can ask questions or ask for changes - so easy - so powerful!
 
-After the drafts were done, it then ran the checklist - which is the other big game changer feature of the V2 BMAD Method. Waiting for the output final decision from the checklist run can be exciting haha!
+After the drafts were done, it then ran the checklist - which is the other big game changer feature of the V2 Orchestrator Method. Waiting for the output final decision from the checklist run can be exciting haha!
 
 Getting that final PRD & EPIC VALIDATION SUMMARY and seeing it all passing is a great feeling.
 
